@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Apply — Sound Haven | NDIS Music Programs</title>
+<meta name="description" content="Apply for a place in Sound Haven's next intake. DJ & Mixing and Music Production programs for NDIS participants in Melbourne."/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABTUlEQVR42mNgIBGc+GpjDMSxQFwOxPVQGsQ3ZqAVABruAsQLgfg9EP/Hg99D1blQy2IbIN5NwFJcGKTPhhLL68m0GB3Xk2P5QipZDsMLqWL5glPm/zO6Df/bxer8V3HU/C9joQmmQXyQOEieIkfgCvYVlyz++xfogS0khEHqQOpJjg5ogsPQ1LHehCiL0TFIHw5H2OBywG5qWU7AEbtx5XOMYKfEchjGER0uBBMesXFOTJogmCDRSzhQaqaG5TCMJXe8Ry/bURSAshQ+A+ObDP6vvgoJWhAN4uNTDzIPSygYwxwQiy4Jytf4LMeWuvE5AmQeFj2xMAeUo0vCChlsGOZzdAwSx6UHZB4WPeU4Cx98wYmvyCVRX/2gCYEBTwMDmwsGvBwYLCXhwNYFA14bDor2wIC3iAZFm3BQtIoHRb9gUPSMBkXfcND0jmkJACKou3OHGDrGAAAAAElFTkSuQmCC"/>
+<link rel="canonical" href="https://soundhavenau.com/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --forest:   #1C3829;
+  --forest-m: #264d38;
+  --lime:     #C8F53C;
+  --lime-d:   #A8D420;
+  --cream:    #F7F3EC;
+  --warm:     #EDE8DF;
+  --sand:     #DDD8CE;
+  --ink:      #0E0E0C;
+  --stone:    #7A7570;
+  --rule:     #D5D0C6;
+  --white:    #FFFFFF;
+  --nav-h:    70px;
+  --serif:    'Instrument Serif', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --ease:     cubic-bezier(.16,1,.3,1);
+  --r:        14px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:var(--sans);cursor:pointer;border:none}
+
+/* grain */
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.022}
+
+/* ── NAV ────────────────────────────────── */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:500;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  transition:background .35s var(--ease),box-shadow .35s var(--ease);
+}
+.nav.solid{
+  background:rgba(247,243,236,.95);backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{
+  font-family:var(--serif);font-size:20px;letter-spacing:-.2px;
+  color:var(--cream);display:flex;align-items:center;gap:3px;
+  transition:color .35s;
+}
+.nav-logo .accent{color:var(--lime);font-style:italic;transition:color .35s}
+.nav.solid .nav-logo{color:var(--ink)}
+.nav.solid .nav-logo .accent{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  font-size:13.5px;font-weight:500;color:rgba(247,243,236,.7);
+  transition:color .18s;position:relative;padding-bottom:2px;
+}
+.nav.solid .nav-links a{color:var(--stone)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:100%;
+  height:1.5px;background:var(--forest);
+  transition:right .22s var(--ease);
+}
+/* FIXED: hover colour is forest (dark) not ink (black) so it stays visible on dark hero */
+.nav-links a:hover{color:var(--forest)}
+.nav-links a.active{color:var(--ink);font-weight:600}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+/* CTA button — self-contained, no ::after underline */
+.nav-cta{
+  background:var(--forest);color:var(--lime) !important;
+  padding:0 22px;height:40px;border-radius:100px;
+  font-size:13px;font-weight:600;letter-spacing:.2px;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .18s,transform .15s !important;
+  white-space:nowrap;
+}
+.nav-cta::after{display:none !important}
+.nav-cta:hover{background:var(--lime) !important;color:var(--ink) !important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:2px;transition:.28s}
+.nav.solid .hamburger span{background:var(--ink)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mob-overlay{
+  display:none;position:fixed;inset:0;z-index:490;
+  background:var(--cream);flex-direction:column;
+  align-items:center;justify-content:center;gap:36px;
+}
+.mob-overlay.open{display:flex}
+.mob-overlay a{font-family:var(--serif);font-size:40px;color:var(--ink);transition:color .15s}
+.mob-overlay a:hover{color:var(--forest)}
+.mob-close{position:absolute;top:24px;right:26px;font-size:24px;cursor:pointer;color:var(--stone)}
+
+/* ── PAGE HERO ──────────────────────────── */
+.page-hero{
+  padding:calc(var(--nav-h) + 80px) 52px 80px;
+  background:var(--forest);position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 100% at 105% 40%,rgba(200,245,60,.14) 0%,transparent 60%);
+}
+.page-hero-inner{position:relative;z-index:1;max-width:780px}
+.ph-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:20px;
+}
+.ph-label::before{content:'';width:20px;height:1px;background:var(--lime)}
+.page-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(38px,5.5vw,70px);
+  line-height:1.04;color:var(--cream);margin-bottom:20px;
+}
+.page-hero p{
+  font-size:16.5px;font-weight:300;
+  color:rgba(247,243,236,.58);line-height:1.78;max-width:560px;
+}
+
+/* ── SECTION ────────────────────────────── */
+.section{padding:96px 52px}
+.section--warm{background:var(--warm)}
+.section--forest{background:var(--forest);color:var(--cream)}
+.section--white{background:var(--white)}
+.section--sand{background:var(--sand)}
+
+/* ── TYPOGRAPHY HELPERS ─────────────────── */
+.label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--forest);margin-bottom:16px;
+}
+.label::before{content:'';width:16px;height:1.5px;background:var(--forest)}
+.label--lime{color:var(--lime)}
+.label--lime::before{background:var(--lime)}
+h2.h2{font-family:var(--serif);font-size:clamp(30px,4vw,54px);line-height:1.06;color:inherit}
+h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
+.body-lg{font-size:16px;font-weight:300;color:var(--stone);line-height:1.8}
+.body-lg--light{color:rgba(247,243,236,.55)}
+
+/* ── BUTTONS ────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:100px;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;
+  cursor:pointer;border:none;text-decoration:none;letter-spacing:.1px;
+  transition:background .18s var(--ease),transform .15s var(--ease),color .18s;
+}
+.btn:active{transform:scale(.97)!important}
+.btn-forest{background:var(--forest);color:var(--lime)}
+.btn-forest:hover{background:var(--lime);color:var(--ink);transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:var(--lime-d);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--rule)}
+.btn-outline:hover{border-color:var(--forest);color:var(--forest)}
+.btn-outline-light{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.15)}
+.btn-outline-light:hover{background:rgba(200,245,60,.12);border-color:var(--lime);color:var(--lime)}
+.btn-lg{padding:16px 34px;font-size:15px}
+
+/* ── TAGS / PILLS ───────────────────────── */
+.pill{display:inline-block;padding:5px 13px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.4px}
+.pill-forest{background:rgba(28,56,41,.1);color:var(--forest)}
+.pill-lime{background:var(--lime);color:var(--ink)}
+.pill-dark{background:rgba(247,243,236,.08);color:rgba(247,243,236,.7)}
+.pill-sand{background:var(--sand);color:var(--stone)}
+
+/* ── REVEAL ─────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-l{opacity:0;transform:translateX(-26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-r{opacity:0;transform:translateX(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.in,.reveal-l.in,.reveal-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.40s}
+
+/* ── SPEC ROW ───────────────────────────── */
+.spec-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-radius:8px}
+.spec-row+.spec-row{margin-top:8px}
+.spec-row--dark{background:rgba(247,243,236,.06)}
+.spec-row--light{background:var(--warm)}
+.spec-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.spec-lbl--dark{color:rgba(247,243,236,.38)}
+.spec-lbl--light{color:var(--stone)}
+.spec-val--dark{font-size:13px;font-weight:500;color:var(--cream)}
+.spec-val--light{font-size:13px;font-weight:500;color:var(--ink)}
+
+/* ── FORM ───────────────────────────────── */
+.form-grid{display:flex;flex-direction:column;gap:18px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-label{font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--stone)}
+.req{color:var(--forest);margin-left:2px}
+.form-input,.form-select,.form-textarea{
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--white);border:1.5px solid var(--rule);
+  border-radius:10px;padding:12px 15px;outline:none;
+  transition:border-color .18s,box-shadow .18s;
+  -webkit-appearance:none;appearance:none;width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--forest);box-shadow:0 0 0 3px rgba(28,56,41,.1)
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--sand)}
+.form-textarea{min-height:110px;resize:vertical;line-height:1.6}
+.form-hint{font-size:12px;color:var(--stone);margin-top:5px;line-height:1.5}
+.form-cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-cb-label{
+  display:flex;align-items:flex-start;gap:10px;cursor:pointer;
+  padding:10px 12px;border-radius:8px;border:1.5px solid var(--rule);
+  font-size:13.5px;color:var(--ink);line-height:1.4;
+  transition:border-color .15s,background .15s;
+}
+.form-cb-label:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.form-cb-label input{margin-top:1px;accent-color:var(--forest);flex-shrink:0}
+.form-success{
+  display:none;background:rgba(28,56,41,.07);border:1.5px solid rgba(28,56,41,.2);
+  border-radius:10px;padding:16px 20px;margin-top:12px;
+  font-size:14px;color:var(--forest);font-weight:500;line-height:1.5;
+}
+.upload-zone{
+  border:2px dashed var(--rule);border-radius:10px;padding:28px 20px;
+  text-align:center;cursor:pointer;background:var(--white);
+  transition:border-color .18s,background .18s;
+}
+.upload-zone:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.upload-zone p{font-size:14px;color:var(--stone);margin-top:8px}
+
+/* ── FAQ ────────────────────────────────── */
+.faq-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.faq-tab{
+  background:var(--warm);color:var(--stone);border:none;
+  padding:9px 20px;border-radius:100px;
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  cursor:pointer;transition:background .15s,color .15s;
+}
+.faq-tab.active,.faq-tab:hover{background:var(--forest);color:var(--lime)}
+.faq-group{display:none}
+.faq-group.active{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid var(--rule);transition:border-color .18s}
+.faq-item.open{border-color:var(--forest)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px;cursor:pointer;gap:16px;
+  font-size:15px;font-weight:500;line-height:1.4;color:var(--ink);
+}
+.faq-arrow{
+  width:28px;height:28px;border-radius:50%;background:var(--warm);
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+  transition:transform .3s var(--ease),background .2s;
+}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--lime)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faq-body-inner{padding:0 20px 20px;font-size:14.5px;color:var(--stone);line-height:1.75}
+.faq-item.open .faq-body{max-height:500px}
+
+/* ── FOOTER ─────────────────────────────── */
+.footer{background:var(--ink);color:rgba(247,243,236,.4);padding:72px 52px 32px}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px;
+}
+.footer-logo{font-family:var(--serif);font-size:21px;color:rgba(247,243,236,.9);margin-bottom:14px;display:flex;align-items:center;gap:3px}
+.footer-logo .accent{color:var(--lime);font-style:italic}
+.footer-brand p{font-size:13px;line-height:1.72;max-width:260px}
+.footer-col h6{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(247,243,236,.5);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(247,243,236,.38);margin-bottom:11px;transition:color .18s}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11.5px}
+.footer-badge{background:rgba(200,245,60,.1);border:1px solid rgba(200,245,60,.2);color:var(--lime);padding:4px 12px;border-radius:100px;font-size:11px}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .nav{padding:0 22px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .section{padding:68px 22px}
+  .page-hero{padding:calc(var(--nav-h)+48px) 22px 56px}
+  .form-row-2{grid-template-columns:1fr}
+  .form-cb-grid{grid-template-columns:1fr}
+  .footer{padding:56px 22px 28px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+}
+
+.enrol-layout{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+.enrol-sidebar{position:sticky;top:calc(var(--nav-h)+24px)}
+.sc{background:var(--forest);border-radius:14px;padding:28px;color:var(--cream);margin-bottom:14px}
+.sc h4{font-family:var(--serif);font-size:17px;margin-bottom:10px;color:var(--cream)}
+.sc p{font-size:13px;color:rgba(247,243,236,.5);line-height:1.65;margin-bottom:10px}
+.sc a{color:var(--lime);font-size:13px;font-weight:500}
+.sc-lime{background:var(--lime);border-radius:14px;padding:24px;margin-bottom:14px}
+.sc-lime h4{font-family:var(--serif);font-size:16px;margin-bottom:10px;color:var(--ink)}
+.sc-lime p{font-size:13px;color:rgba(14,14,12,.65);line-height:1.6}
+.steps-list{display:flex;flex-direction:column;gap:12px}
+.step-item{display:flex;gap:12px;align-items:flex-start}
+.step-circ{width:26px;height:26px;border-radius:50%;background:rgba(247,243,236,.1);color:var(--lime);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-text h5{font-size:13px;font-weight:600;color:var(--cream);margin-bottom:2px}
+.step-text p{font-size:12px;color:rgba(247,243,236,.4);line-height:1.5}
+.form-sec{margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid var(--rule)}
+.form-sec:last-of-type{border-bottom:none}
+.form-sec-title{font-family:var(--serif);font-size:22px;margin-bottom:6px;color:var(--ink)}
+.form-sec-sub{font-size:14px;color:var(--stone);margin-bottom:20px;line-height:1.6}
+.intake-notice{background:rgba(200,245,60,.12);border:1.5px solid rgba(28,56,41,.15);border-radius:10px;padding:18px 20px;margin-bottom:20px}
+.intake-notice p{font-size:14px;color:var(--forest);line-height:1.65}
+.intake-notice strong{font-weight:700}
+.doc-item{display:grid;grid-template-columns:44px 1fr;gap:14px;background:rgba(28,56,41,.05);border:1.5px solid rgba(28,56,41,.12);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.doc-icon{width:38px;height:38px;background:rgba(28,56,41,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.doc-item h5{font-size:14px;font-weight:600;margin-bottom:3px;color:var(--ink)}
+.doc-item h5 .req-badge{color:var(--forest);font-size:11px;font-weight:700;margin-left:6px}
+.doc-item p{font-size:12.5px;color:var(--stone);line-height:1.5}
+.upload-zone{border:2px dashed var(--rule);border-radius:10px;padding:28px 20px;text-align:center;cursor:pointer;background:var(--white);transition:border-color .18s,background .18s}
+.upload-zone:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.upload-zone p{font-size:14px;color:var(--stone);margin-top:8px}
+.cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consent-box{background:var(--warm);border-radius:10px;padding:20px;border:1px solid var(--rule)}
+.consent-txt{font-size:13.5px;color:var(--stone);line-height:1.7;margin-bottom:16px}
+.consent-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:12px}
+.consent-check:last-child{margin-bottom:0}
+.consent-check input{margin-top:2px;accent-color:var(--forest);flex-shrink:0}
+.consent-check span{font-size:13.5px;color:var(--ink);line-height:1.45;font-weight:500}
+@media(max-width:960px){.enrol-layout{grid-template-columns:1fr}.enrol-sidebar{position:static}.cb-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo">Sound<span class="accent">Haven</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="classes.html">Programs</a></li>
+    <li><a href="enrol.html" class="active">Enrol</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li></ul>
+  <div class="hamburger" id="hb" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-overlay" id="mob">
+  <span class="mob-close" onclick="toggleMenu()">✕</span>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="classes.html" onclick="toggleMenu()">Programs</a>
+  <a href="enrol.html" onclick="toggleMenu()">Enrol</a>
+  <a href="faqs.html" onclick="toggleMenu()">FAQs</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-label">Apply</div>
+    <h1>Ready to get started? Apply for a place.</h1>
+    <p>Complete this form to apply for a place in the next Sound Haven intake. We review all applications and contact you within 48 hours to arrange a free consultation call before confirming your place.</p>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="enrol-layout">
+    <div class="enrol-sidebar reveal-l">
+      <div class="sc-lime">
+        <h4>How Intakes Work</h4>
+        <p>Sound Haven runs structured intake rounds — programs begin on fixed dates throughout the year. When you apply, we'll confirm whether the upcoming intake has places available, or offer you a spot in the next one.</p>
+        <p>Once you apply, you'll be contacted within 48 hours. You'll need to confirm your place and submit required documentation within the timeframe we provide — places don't hold indefinitely.</p>
+      </div>
+      <div class="sc">
+        <h4>What to Have Ready</h4>
+        <p>Your NDIS participant number, support coordinator contact details, and a letter of support from your coordinator. Full document requirements are explained below.</p>
+        <a href="contact.html">Questions first? Talk to us →</a>
+      </div>
+      <div class="sc">
+        <h4>What Happens After You Apply</h4>
+        <div class="steps-list">
+          <div class="step-item"><div class="step-circ">01</div><div class="step-text"><h5>We review your application</h5><p>Within 48 hours of submission.</p></div></div>
+          <div class="step-item"><div class="step-circ">02</div><div class="step-text"><h5>Free consultation call</h5><p>We confirm fit and answer your questions.</p></div></div>
+          <div class="step-item"><div class="step-circ">03</div><div class="step-text"><h5>Documents confirmed</h5><p>NDIS funding and coordinator letter verified.</p></div></div>
+          <div class="step-item"><div class="step-circ">04</div><div class="step-text"><h5>Place confirmed + intake date</h5><p>You're in. We send your program details and start date.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-r">
+      <form id="enrolForm" onsubmit="event.preventDefault();send('enrolSuccess','enrolBtn')">
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Participant Information</h3>
+          <div class="form-grid">
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">First Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="First name" required/></div>
+              <div class="form-group"><label class="form-label">Last Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="Last name" required/></div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">Date of Birth<span class="req">*</span></label><input class="form-input" type="date" required/></div>
+              <div class="form-group"><label class="form-label">Gender (optional)</label><select class="form-select"><option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Other</option></select></div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">Email<span class="req">*</span></label><input class="form-input" type="email" placeholder="email@address.com" required/></div>
+              <div class="form-group"><label class="form-label">Phone<span class="req">*</span></label><input class="form-input" type="tel" placeholder="04xx xxx xxx" required/></div>
+            </div>
+            <div class="form-group"><label class="form-label">Residential Address<span class="req">*</span></label><input class="form-input" type="text" placeholder="Street, suburb, state, postcode" required/></div>
+          </div>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">NDIS Details</h3>
+          <div class="form-grid">
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">NDIS Participant Number<span class="req">*</span></label><input class="form-input" type="text" placeholder="43XXXXXXXX" required/></div>
+              <div class="form-group"><label class="form-label">Plan Management Type<span class="req">*</span></label><select class="form-select" required><option value="">Select</option><option>NDIA Managed</option><option>Plan Managed</option><option>Self Managed</option></select></div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">Plan Start Date<span class="req">*</span></label><input class="form-input" type="date" required/></div>
+              <div class="form-group"><label class="form-label">Plan End Date<span class="req">*</span></label><input class="form-input" type="date" required/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Support Coordinator</h3>
+          <p class="form-sec-sub">We need your support coordinator's details and a signed letter of support confirming you are fit and able to attend the program. See document section below.</p>
+          <div class="form-grid">
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">Coordinator Full Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="Full name" required/></div>
+              <div class="form-group"><label class="form-label">Organisation / Agency</label><input class="form-input" type="text" placeholder="Organisation name"/></div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group"><label class="form-label">Coordinator Email<span class="req">*</span></label><input class="form-input" type="email" placeholder="coordinator@agency.com.au" required/></div>
+              <div class="form-group"><label class="form-label">Coordinator Phone<span class="req">*</span></label><input class="form-input" type="tel" placeholder="Phone number" required/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Disability &amp; Access Requirements</h3>
+          <p class="form-sec-sub">This information helps us prepare the right environment and support. All information is strictly confidential and used solely for program delivery.</p>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">Primary Disability / Diagnosis<span class="req">*</span></label><input class="form-input" type="text" placeholder="e.g. Cerebral Palsy, ADHD, ASD, Spinal Cord Injury, ABI, Psychosocial disability" required/></div>
+            <div class="form-group"><label class="form-label">Secondary Conditions (if any)</label><input class="form-input" type="text" placeholder="Any additional diagnoses or conditions"/></div>
+            <div class="form-group">
+              <label class="form-label">Physical &amp; Mobility Access Needs</label>
+              <div class="cb-grid">
+                <label class="form-cb-label"><input type="checkbox"/> Wheelchair user</label>
+                <label class="form-cb-label"><input type="checkbox"/> Walking frame / mobility aid</label>
+                <label class="form-cb-label"><input type="checkbox"/> Limited upper limb mobility</label>
+                <label class="form-cb-label"><input type="checkbox"/> Accessible parking required</label>
+                <label class="form-cb-label"><input type="checkbox"/> Accessible bathroom required</label>
+                <label class="form-cb-label"><input type="checkbox"/> No specific physical access needs</label>
+              </div>
+            </div>
+            <div class="form-group"><label class="form-label">Sensory or Communication Needs</label><textarea class="form-textarea" style="min-height:80px" placeholder="e.g. hearing aids, visual impairment, preferred communication style, noise sensitivity, AAC device..."></textarea></div>
+            <div class="form-group"><label class="form-label">Behavioural or Environmental Considerations</label><textarea class="form-textarea" style="min-height:80px" placeholder="e.g. lighting preferences, preferred session structure, things that help you focus, things to be aware of..."></textarea></div>
+            <div class="form-group"><label class="form-label">Any Other Requirements</label><textarea class="form-textarea" placeholder="Anything else that will help us prepare the best experience for you..."></textarea></div>
+            <div class="form-group"><label class="form-label">Will a Support Worker Attend?<span class="req">*</span></label>
+              <select class="form-select" required>
+                <option value="">Select</option>
+                <option>Yes — support worker will attend all sessions</option>
+                <option>Yes — support worker will attend some sessions</option>
+                <option>No — attending independently</option>
+                <option>Unsure — to be confirmed</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Program Selection</h3>
+          <p style="font-size:14px;color:var(--forest);background:rgba(28,56,41,.06);padding:12px 16px;border-radius:8px;margin-bottom:16px"><strong>Eligibility:</strong> Sound Haven programs are open to NDIS participants with a physical disability or a neurodivergent condition (e.g. ASD, ADHD, ABI, psychosocial disability). All ages welcome.</p><div class="intake-notice">
+            <p><strong>How intake works:</strong> Sound Haven runs fixed intake rounds throughout the year. After submitting this application, we'll confirm availability for the upcoming intake and contact you with your options. You'll need to respond and complete documentation within the timeframe provided to secure your place.</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">Program<span class="req">*</span></label>
+              <select class="form-select" required>
+                <option value="">Select a program</option>
+                <option>DJ &amp; Mixing (10 weeks)</option>
+                <option>Music Production — Block 1 (10 weeks)</option>
+                <option>Unsure — I'd like to discuss options</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Session Format Preference</label>
+              <select class="form-select">
+                <option value="">No preference</option>
+                <option>1:1 sessions preferred</option>
+                <option>Group sessions preferred</option>
+                <option>Either works</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Anything else we should know?</label>
+              <textarea class="form-textarea" placeholder="Goals, interests, questions, context — anything that helps us prepare for you..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Required Documents</h3>
+          <p class="form-sec-sub">The following documents are required before a place can be confirmed. Upload here or email to soundhavenau@gmail.com after submitting your application.</p>
+          <div class="doc-item"><div class="doc-icon">📋</div><div><h5>Support Coordinator Letter of Support<span class="req-badge">REQUIRED</span></h5><p>A signed letter from your NDIS support coordinator confirming you are fit and able to attend Sound Haven programs. The letter should include the coordinator's name, organisation, contact details, your NDIS participant number, and confirmation of relevant Capacity Building funding.</p></div></div>
+          <div class="doc-item"><div class="doc-icon">📄</div><div><h5>NDIS Plan Funding Page<span class="req-badge">REQUIRED</span></h5><p>A copy of the relevant section of your NDIS plan showing Capacity Building funding under Social &amp; Community Participation or Improved Daily Living, with sufficient funds for the program.</p></div></div>
+          <div class="doc-item" style="background:var(--warm);border-color:var(--rule)"><div class="doc-icon" style="background:var(--sand)">💉</div><div><h5>Medical Clearance (if applicable)</h5><p>If you have complex medical needs, a brief note from a GP or specialist may be requested. We'll advise you during the consultation call.</p></div></div>
+          <div class="upload-zone" style="margin-top:20px" onclick="document.getElementById('fu').click()">
+            <div style="font-size:28px">📎</div>
+            <p><strong>Click to upload documents</strong> — or drag and drop</p>
+            <p style="font-size:12px;margin-top:4px">PDF, JPG, PNG · Max 10MB per file</p>
+            <input id="fu" type="file" multiple accept=".pdf,.jpg,.jpeg,.png" style="display:none"/>
+          </div>
+          <p class="form-hint" style="margin-top:10px">Can't upload now? Email to <strong>soundhavenau@gmail.com</strong> with your name and NDIS number in the subject line.</p>
+        </div>
+
+        <div class="form-sec">
+          <h3 class="form-sec-title">Consent &amp; Declaration</h3>
+          <div class="consent-box">
+            <p class="consent-txt">By submitting this application you confirm the information provided is accurate, you consent to Sound Haven storing and using this information for program enrolment and delivery, and you understand that a place is not confirmed until documentation is verified and a consultation call is completed. You acknowledge that Sound Haven's programs are creative capacity building programs — not a substitute for medical, therapeutic, or clinical services.</p>
+            <label class="consent-check"><input type="checkbox" required/><span>I confirm the above and agree to Sound Haven's <a href="legal.html" style="color:var(--forest);text-decoration:underline">Privacy Policy and Terms of Use</a>.</span></label>
+            <label class="consent-check"><input type="checkbox"/><span>I give permission for Sound Haven to contact my support coordinator directly regarding this application.</span></label>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+          <button id="enrolBtn" type="submit" class="btn btn-forest btn-lg">Submit Application →</button>
+          <p style="font-size:13px;color:var(--stone)">We'll be in touch within 48 hours.</p>
+        </div>
+        <div class="form-success" id="enrolSuccess">✓ Application received. We'll review it and contact you within 48 hours to discuss availability for the next intake and arrange your free consultation call. If you haven't uploaded documents yet, email them to soundhavenau@gmail.com with your name and NDIS number in the subject line.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Sound<span class="accent">Haven</span></div>
+      <p>A creative studio where NDIS participants build real skills, genuine confidence, and lasting community — through music production and DJing in Melbourne.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Programs</h6>
+      <a href="classes.html">DJ &amp; Mixing</a>
+      <a href="classes.html">Music Production</a>
+      <a href="enrol.html">Apply Now</a>
+    </div>
+    <div class="footer-col">
+      <h6>Navigate</h6>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h6>Legal</h6>
+      <a href="legal.html">Privacy Policy</a>
+      <a href="legal.html">Terms of Use</a>
+      <h6 style="margin-top:18px">Contact</h6>
+      <a href="mailto:soundhavenau@gmail.com">soundhavenau@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sound Haven. NDIS Provider. Melbourne, VIC.</span>
+    <span class="footer-badge">Melbourne, VIC</span>
+  </div>
+</footer>
+<script>
+const navEl = document.getElementById('mainNav');
+if(navEl){
+  const s=()=>navEl.classList.toggle('solid',scrollY>24);
+  window.addEventListener('scroll',s,{passive:true});s();
+}
+const hb=document.getElementById('hb'),mob=document.getElementById('mob');
+function toggleMenu(){if(hb&&mob){hb.classList.toggle('open');mob.classList.toggle('open')}}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const it=b.closest('.faq-item'),open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open)it.classList.add('open');
+  });
+});
+function showFaq(cat,btn){
+  document.querySelectorAll('.faq-group').forEach(g=>g.classList.remove('active'));
+  document.querySelectorAll('.faq-tab').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById('fq-'+cat);
+  if(el)el.classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+function send(sid,bid){
+  const b=document.getElementById(bid),s=document.getElementById(sid);
+  if(!b||!s)return;
+  b.disabled=true;b.textContent='Sent ✓';
+  s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>

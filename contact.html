@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Sound Haven | Get in Touch</title>
+<meta name="description" content="Reach out to Sound Haven to enquire about our programs or start a referral. Melbourne, VIC."/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABTUlEQVR42mNgIBGc+GpjDMSxQFwOxPVQGsQ3ZqAVABruAsQLgfg9EP/Hg99D1blQy2IbIN5NwFJcGKTPhhLL68m0GB3Xk2P5QipZDsMLqWL5glPm/zO6Df/bxer8V3HU/C9joQmmQXyQOEieIkfgCvYVlyz++xfogS0khEHqQOpJjg5ogsPQ1LHehCiL0TFIHw5H2OBywG5qWU7AEbtx5XOMYKfEchjGER0uBBMesXFOTJogmCDRSzhQaqaG5TCMJXe8Ry/bURSAshQ+A+ObDP6vvgoJWhAN4uNTDzIPSygYwxwQiy4Jytf4LMeWuvE5AmQeFj2xMAeUo0vCChlsGOZzdAwSx6UHZB4WPeU4Cx98wYmvyCVRX/2gCYEBTwMDmwsGvBwYLCXhwNYFA14bDor2wIC3iAZFm3BQtIoHRb9gUPSMBkXfcND0jmkJACKou3OHGDrGAAAAAElFTkSuQmCC"/>
+<link rel="canonical" href="https://soundhavenau.com/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --forest:   #1C3829;
+  --forest-m: #264d38;
+  --lime:     #C8F53C;
+  --lime-d:   #A8D420;
+  --cream:    #F7F3EC;
+  --warm:     #EDE8DF;
+  --sand:     #DDD8CE;
+  --ink:      #0E0E0C;
+  --stone:    #7A7570;
+  --rule:     #D5D0C6;
+  --white:    #FFFFFF;
+  --nav-h:    70px;
+  --serif:    'Instrument Serif', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --ease:     cubic-bezier(.16,1,.3,1);
+  --r:        14px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:var(--sans);cursor:pointer;border:none}
+
+/* grain */
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.022}
+
+/* ── NAV ────────────────────────────────── */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:500;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  transition:background .35s var(--ease),box-shadow .35s var(--ease);
+}
+.nav.solid{
+  background:rgba(247,243,236,.95);backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{
+  font-family:var(--serif);font-size:20px;letter-spacing:-.2px;
+  color:var(--cream);display:flex;align-items:center;gap:3px;
+  transition:color .35s;
+}
+.nav-logo .accent{color:var(--lime);font-style:italic;transition:color .35s}
+.nav.solid .nav-logo{color:var(--ink)}
+.nav.solid .nav-logo .accent{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  font-size:13.5px;font-weight:500;color:rgba(247,243,236,.7);
+  transition:color .18s;position:relative;padding-bottom:2px;
+}
+.nav.solid .nav-links a{color:var(--stone)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:100%;
+  height:1.5px;background:var(--forest);
+  transition:right .22s var(--ease);
+}
+/* FIXED: hover colour is forest (dark) not ink (black) so it stays visible on dark hero */
+.nav-links a:hover{color:var(--forest)}
+.nav-links a.active{color:var(--ink);font-weight:600}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+/* CTA button — self-contained, no ::after underline */
+.nav-cta{
+  background:var(--forest);color:var(--lime) !important;
+  padding:0 22px;height:40px;border-radius:100px;
+  font-size:13px;font-weight:600;letter-spacing:.2px;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .18s,transform .15s !important;
+  white-space:nowrap;
+}
+.nav-cta::after{display:none !important}
+.nav-cta:hover{background:var(--lime) !important;color:var(--ink) !important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:2px;transition:.28s}
+.nav.solid .hamburger span{background:var(--ink)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mob-overlay{
+  display:none;position:fixed;inset:0;z-index:490;
+  background:var(--cream);flex-direction:column;
+  align-items:center;justify-content:center;gap:36px;
+}
+.mob-overlay.open{display:flex}
+.mob-overlay a{font-family:var(--serif);font-size:40px;color:var(--ink);transition:color .15s}
+.mob-overlay a:hover{color:var(--forest)}
+.mob-close{position:absolute;top:24px;right:26px;font-size:24px;cursor:pointer;color:var(--stone)}
+
+/* ── PAGE HERO ──────────────────────────── */
+.page-hero{
+  padding:calc(var(--nav-h) + 80px) 52px 80px;
+  background:var(--forest);position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 100% at 105% 40%,rgba(200,245,60,.14) 0%,transparent 60%);
+}
+.page-hero-inner{position:relative;z-index:1;max-width:780px}
+.ph-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:20px;
+}
+.ph-label::before{content:'';width:20px;height:1px;background:var(--lime)}
+.page-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(38px,5.5vw,70px);
+  line-height:1.04;color:var(--cream);margin-bottom:20px;
+}
+.page-hero p{
+  font-size:16.5px;font-weight:300;
+  color:rgba(247,243,236,.58);line-height:1.78;max-width:560px;
+}
+
+/* ── SECTION ────────────────────────────── */
+.section{padding:96px 52px}
+.section--warm{background:var(--warm)}
+.section--forest{background:var(--forest);color:var(--cream)}
+.section--white{background:var(--white)}
+.section--sand{background:var(--sand)}
+
+/* ── TYPOGRAPHY HELPERS ─────────────────── */
+.label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--forest);margin-bottom:16px;
+}
+.label::before{content:'';width:16px;height:1.5px;background:var(--forest)}
+.label--lime{color:var(--lime)}
+.label--lime::before{background:var(--lime)}
+h2.h2{font-family:var(--serif);font-size:clamp(30px,4vw,54px);line-height:1.06;color:inherit}
+h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
+.body-lg{font-size:16px;font-weight:300;color:var(--stone);line-height:1.8}
+.body-lg--light{color:rgba(247,243,236,.55)}
+
+/* ── BUTTONS ────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:100px;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;
+  cursor:pointer;border:none;text-decoration:none;letter-spacing:.1px;
+  transition:background .18s var(--ease),transform .15s var(--ease),color .18s;
+}
+.btn:active{transform:scale(.97)!important}
+.btn-forest{background:var(--forest);color:var(--lime)}
+.btn-forest:hover{background:var(--lime);color:var(--ink);transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:var(--lime-d);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--rule)}
+.btn-outline:hover{border-color:var(--forest);color:var(--forest)}
+.btn-outline-light{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.15)}
+.btn-outline-light:hover{background:rgba(200,245,60,.12);border-color:var(--lime);color:var(--lime)}
+.btn-lg{padding:16px 34px;font-size:15px}
+
+/* ── TAGS / PILLS ───────────────────────── */
+.pill{display:inline-block;padding:5px 13px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.4px}
+.pill-forest{background:rgba(28,56,41,.1);color:var(--forest)}
+.pill-lime{background:var(--lime);color:var(--ink)}
+.pill-dark{background:rgba(247,243,236,.08);color:rgba(247,243,236,.7)}
+.pill-sand{background:var(--sand);color:var(--stone)}
+
+/* ── REVEAL ─────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-l{opacity:0;transform:translateX(-26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-r{opacity:0;transform:translateX(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.in,.reveal-l.in,.reveal-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.40s}
+
+/* ── SPEC ROW ───────────────────────────── */
+.spec-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-radius:8px}
+.spec-row+.spec-row{margin-top:8px}
+.spec-row--dark{background:rgba(247,243,236,.06)}
+.spec-row--light{background:var(--warm)}
+.spec-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.spec-lbl--dark{color:rgba(247,243,236,.38)}
+.spec-lbl--light{color:var(--stone)}
+.spec-val--dark{font-size:13px;font-weight:500;color:var(--cream)}
+.spec-val--light{font-size:13px;font-weight:500;color:var(--ink)}
+
+/* ── FORM ───────────────────────────────── */
+.form-grid{display:flex;flex-direction:column;gap:18px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-label{font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--stone)}
+.req{color:var(--forest);margin-left:2px}
+.form-input,.form-select,.form-textarea{
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--white);border:1.5px solid var(--rule);
+  border-radius:10px;padding:12px 15px;outline:none;
+  transition:border-color .18s,box-shadow .18s;
+  -webkit-appearance:none;appearance:none;width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--forest);box-shadow:0 0 0 3px rgba(28,56,41,.1)
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--sand)}
+.form-textarea{min-height:110px;resize:vertical;line-height:1.6}
+.form-hint{font-size:12px;color:var(--stone);margin-top:5px;line-height:1.5}
+.form-cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-cb-label{
+  display:flex;align-items:flex-start;gap:10px;cursor:pointer;
+  padding:10px 12px;border-radius:8px;border:1.5px solid var(--rule);
+  font-size:13.5px;color:var(--ink);line-height:1.4;
+  transition:border-color .15s,background .15s;
+}
+.form-cb-label:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.form-cb-label input{margin-top:1px;accent-color:var(--forest);flex-shrink:0}
+.form-success{
+  display:none;background:rgba(28,56,41,.07);border:1.5px solid rgba(28,56,41,.2);
+  border-radius:10px;padding:16px 20px;margin-top:12px;
+  font-size:14px;color:var(--forest);font-weight:500;line-height:1.5;
+}
+.upload-zone{
+  border:2px dashed var(--rule);border-radius:10px;padding:28px 20px;
+  text-align:center;cursor:pointer;background:var(--white);
+  transition:border-color .18s,background .18s;
+}
+.upload-zone:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.upload-zone p{font-size:14px;color:var(--stone);margin-top:8px}
+
+/* ── FAQ ────────────────────────────────── */
+.faq-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.faq-tab{
+  background:var(--warm);color:var(--stone);border:none;
+  padding:9px 20px;border-radius:100px;
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  cursor:pointer;transition:background .15s,color .15s;
+}
+.faq-tab.active,.faq-tab:hover{background:var(--forest);color:var(--lime)}
+.faq-group{display:none}
+.faq-group.active{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid var(--rule);transition:border-color .18s}
+.faq-item.open{border-color:var(--forest)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px;cursor:pointer;gap:16px;
+  font-size:15px;font-weight:500;line-height:1.4;color:var(--ink);
+}
+.faq-arrow{
+  width:28px;height:28px;border-radius:50%;background:var(--warm);
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+  transition:transform .3s var(--ease),background .2s;
+}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--lime)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faq-body-inner{padding:0 20px 20px;font-size:14.5px;color:var(--stone);line-height:1.75}
+.faq-item.open .faq-body{max-height:500px}
+
+/* ── FOOTER ─────────────────────────────── */
+.footer{background:var(--ink);color:rgba(247,243,236,.4);padding:72px 52px 32px}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px;
+}
+.footer-logo{font-family:var(--serif);font-size:21px;color:rgba(247,243,236,.9);margin-bottom:14px;display:flex;align-items:center;gap:3px}
+.footer-logo .accent{color:var(--lime);font-style:italic}
+.footer-brand p{font-size:13px;line-height:1.72;max-width:260px}
+.footer-col h6{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(247,243,236,.5);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(247,243,236,.38);margin-bottom:11px;transition:color .18s}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11.5px}
+.footer-badge{background:rgba(200,245,60,.1);border:1px solid rgba(200,245,60,.2);color:var(--lime);padding:4px 12px;border-radius:100px;font-size:11px}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .nav{padding:0 22px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .section{padding:68px 22px}
+  .page-hero{padding:calc(var(--nav-h)+48px) 22px 56px}
+  .form-row-2{grid-template-columns:1fr}
+  .form-cb-grid{grid-template-columns:1fr}
+  .footer{padding:56px 22px 28px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+}
+
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.ci-list{display:flex;flex-direction:column;gap:14px;margin:24px 0 32px}
+.ci{display:grid;grid-template-columns:42px 1fr;gap:12px}
+.ci-icon{width:42px;height:42px;background:rgba(28,56,41,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px}
+.ci h5{font-size:13px;font-weight:600;margin-bottom:2px}
+.ci p{font-size:13px;color:var(--stone);line-height:1.5}
+.who-chips{display:flex;flex-wrap:wrap;gap:8px}
+.who-chip{background:var(--warm);color:var(--stone);font-size:12px;font-weight:600;padding:6px 13px;border-radius:100px;border:1px solid var(--rule)}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.ns{background:var(--white);border-radius:12px;padding:26px;border:1px solid var(--rule)}
+.ns-num{font-family:var(--serif);font-size:40px;line-height:1;color:rgba(14,14,12,.07);margin-bottom:10px}
+.ns h4{font-family:var(--serif);font-size:16px;margin-bottom:7px}
+.ns p{font-size:13px;color:var(--stone);line-height:1.6}
+@media(max-width:768px){.ct-layout{grid-template-columns:1fr;gap:48px}.next-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo">Sound<span class="accent">Haven</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="classes.html">Programs</a></li>
+    <li><a href="enrol.html">Enrol</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li></ul>
+  <div class="hamburger" id="hb" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-overlay" id="mob">
+  <span class="mob-close" onclick="toggleMenu()">✕</span>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="classes.html" onclick="toggleMenu()">Programs</a>
+  <a href="enrol.html" onclick="toggleMenu()">Enrol</a>
+  <a href="faqs.html" onclick="toggleMenu()">FAQs</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-label">Contact</div>
+    <h1>Come and have a conversation with us.</h1>
+    <p>Whether you're a support coordinator, participant, parent, or carer — we'd love to hear from you. No pressure, no jargon. The first conversation is always free.</p>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="ct-layout">
+    <div class="reveal-l">
+      <div class="label">Get in Touch</div>
+      <h2 class="h2" style="margin-bottom:0">We're here to help you find the right fit.</h2>
+      <div class="ci-list">
+        <div class="ci"><div class="ci-icon">📍</div><div><h5>Location</h5><p>Melbourne, VIC<br/>Fully accessible studio space</p></div></div>
+        <div class="ci"><div class="ci-icon">✉️</div><div><h5>Email</h5><p>soundhavenau@gmail.com</p></div></div>
+        <div class="ci"><div class="ci-icon">🌐</div><div><h5>Website</h5><p>soundhavenau.com</p></div></div>
+        <div class="ci"><div class="ci-icon">🕐</div><div><h5>Hours</h5><p>Mon–Fri, 9am–5pm AEST<br/>Sessions by appointment</p></div></div>
+      </div>
+      <p style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--stone);margin-bottom:10px">Who typically reaches out</p>
+      <div class="who-chips">
+        <span class="who-chip">Support Coordinators</span>
+        <span class="who-chip">NDIS Participants</span>
+        <span class="who-chip">Parents &amp; Carers</span>
+        <span class="who-chip">Plan Managers</span>
+        <span class="who-chip">Healthcare Providers</span>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:22px">Send us a message</h3>
+      <div class="form-grid">
+        <div class="form-row-2">
+          <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="First name"/></div>
+          <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Last name"/></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label class="form-label">Phone (optional)</label><input class="form-input" type="tel" placeholder="04xx xxx xxx"/></div>
+        <div class="form-group"><label class="form-label">I am a...</label>
+          <select class="form-select"><option value="">Select</option><option>Support Coordinator</option><option>NDIS Participant</option><option>Parent / Carer</option><option>Plan Manager</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Program of Interest</label>
+          <select class="form-select"><option value="">Select</option><option>DJ &amp; Mixing</option><option>Music Production</option><option>Not sure — tell me more</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about the participant, their goals, or anything you'd like to know..."></textarea>
+        </div>
+        <div>
+          <button id="contactBtn" onclick="send('contactSuccess','contactBtn')" class="btn btn-forest">Send Message →</button>
+          <div class="form-success" id="contactSuccess">✓ Message sent — we'll be in touch within 48 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="reveal"><div class="label">After You Reach Out</div><h2 class="h2">What happens next.</h2></div>
+  <div class="next-grid reveal d1">
+    <div class="ns"><div class="ns-num">01</div><h4>We reply within 48 hours</h4><p>A real person reads every message. No auto-replies, no bots.</p></div>
+    <div class="ns"><div class="ns-num">02</div><h4>Free consultation call</h4><p>We learn about the participant, their goals, and their NDIS plan. No commitment.</p></div>
+    <div class="ns"><div class="ns-num">03</div><h4>Application &amp; intake</h4><p>If we're the right fit, we send the application form and guide you through the rest.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Sound<span class="accent">Haven</span></div>
+      <p>A creative studio where NDIS participants build real skills, genuine confidence, and lasting community — through music production and DJing in Melbourne.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Programs</h6>
+      <a href="classes.html">DJ &amp; Mixing</a>
+      <a href="classes.html">Music Production</a>
+      <a href="enrol.html">Apply Now</a>
+    </div>
+    <div class="footer-col">
+      <h6>Navigate</h6>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h6>Legal</h6>
+      <a href="legal.html">Privacy Policy</a>
+      <a href="legal.html">Terms of Use</a>
+      <h6 style="margin-top:18px">Contact</h6>
+      <a href="mailto:soundhavenau@gmail.com">soundhavenau@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sound Haven. NDIS Provider. Melbourne, VIC.</span>
+    <span class="footer-badge">Melbourne, VIC</span>
+  </div>
+</footer>
+<script>
+const navEl = document.getElementById('mainNav');
+if(navEl){
+  const s=()=>navEl.classList.toggle('solid',scrollY>24);
+  window.addEventListener('scroll',s,{passive:true});s();
+}
+const hb=document.getElementById('hb'),mob=document.getElementById('mob');
+function toggleMenu(){if(hb&&mob){hb.classList.toggle('open');mob.classList.toggle('open')}}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const it=b.closest('.faq-item'),open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open)it.classList.add('open');
+  });
+});
+function showFaq(cat,btn){
+  document.querySelectorAll('.faq-group').forEach(g=>g.classList.remove('active'));
+  document.querySelectorAll('.faq-tab').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById('fq-'+cat);
+  if(el)el.classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+function send(sid,bid){
+  const b=document.getElementById(bid),s=document.getElementById(sid);
+  if(!b||!s)return;
+  b.disabled=true;b.textContent='Sent ✓';
+  s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Programs — DJ & Mixing and Music Production | Sound Haven</title>
+<meta name="description" content="Two NDIS-funded music programs in Melbourne. DJ & Mixing (10 weeks) and Music Production (10-week blocks). No experience required. All equipment provided."/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABTUlEQVR42mNgIBGc+GpjDMSxQFwOxPVQGsQ3ZqAVABruAsQLgfg9EP/Hg99D1blQy2IbIN5NwFJcGKTPhhLL68m0GB3Xk2P5QipZDsMLqWL5glPm/zO6Df/bxer8V3HU/C9joQmmQXyQOEieIkfgCvYVlyz++xfogS0khEHqQOpJjg5ogsPQ1LHehCiL0TFIHw5H2OBywG5qWU7AEbtx5XOMYKfEchjGER0uBBMesXFOTJogmCDRSzhQaqaG5TCMJXe8Ry/bURSAshQ+A+ObDP6vvgoJWhAN4uNTDzIPSygYwxwQiy4Jytf4LMeWuvE5AmQeFj2xMAeUo0vCChlsGOZzdAwSx6UHZB4WPeU4Cx98wYmvyCVRX/2gCYEBTwMDmwsGvBwYLCXhwNYFA14bDor2wIC3iAZFm3BQtIoHRb9gUPSMBkXfcND0jmkJACKou3OHGDrGAAAAAElFTkSuQmCC"/>
+<link rel="canonical" href="https://soundhavenau.com/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --forest:   #1C3829;
+  --forest-m: #264d38;
+  --lime:     #C8F53C;
+  --lime-d:   #A8D420;
+  --cream:    #F7F3EC;
+  --warm:     #EDE8DF;
+  --sand:     #DDD8CE;
+  --ink:      #0E0E0C;
+  --stone:    #7A7570;
+  --rule:     #D5D0C6;
+  --white:    #FFFFFF;
+  --nav-h:    70px;
+  --serif:    'Instrument Serif', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --ease:     cubic-bezier(.16,1,.3,1);
+  --r:        14px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:var(--sans);cursor:pointer;border:none}
+
+/* grain */
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.022}
+
+/* ── NAV ────────────────────────────────── */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:500;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  transition:background .35s var(--ease),box-shadow .35s var(--ease);
+}
+.nav.solid{
+  background:rgba(247,243,236,.95);backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{
+  font-family:var(--serif);font-size:20px;letter-spacing:-.2px;
+  color:var(--cream);display:flex;align-items:center;gap:3px;
+  transition:color .35s;
+}
+.nav-logo .accent{color:var(--lime);font-style:italic;transition:color .35s}
+.nav.solid .nav-logo{color:var(--ink)}
+.nav.solid .nav-logo .accent{color:var(--forest)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+  font-size:13.5px;font-weight:500;color:rgba(247,243,236,.7);
+  transition:color .18s;position:relative;padding-bottom:2px;
+}
+.nav.solid .nav-links a{color:var(--stone)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:100%;
+  height:1.5px;background:var(--forest);
+  transition:right .22s var(--ease);
+}
+/* FIXED: hover colour is forest (dark) not ink (black) so it stays visible on dark hero */
+.nav-links a:hover{color:var(--forest)}
+.nav-links a.active{color:var(--ink);font-weight:600}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+/* CTA button — self-contained, no ::after underline */
+.nav-cta{
+  background:var(--forest);color:var(--lime) !important;
+  padding:0 22px;height:40px;border-radius:100px;
+  font-size:13px;font-weight:600;letter-spacing:.2px;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .18s,transform .15s !important;
+  white-space:nowrap;
+}
+.nav-cta::after{display:none !important}
+.nav-cta:hover{background:var(--lime) !important;color:var(--ink) !important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:2px;transition:.28s}
+.nav.solid .hamburger span{background:var(--ink)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mob-overlay{
+  display:none;position:fixed;inset:0;z-index:490;
+  background:var(--cream);flex-direction:column;
+  align-items:center;justify-content:center;gap:36px;
+}
+.mob-overlay.open{display:flex}
+.mob-overlay a{font-family:var(--serif);font-size:40px;color:var(--ink);transition:color .15s}
+.mob-overlay a:hover{color:var(--forest)}
+.mob-close{position:absolute;top:24px;right:26px;font-size:24px;cursor:pointer;color:var(--stone)}
+
+/* ── PAGE HERO ──────────────────────────── */
+.page-hero{
+  padding:calc(var(--nav-h) + 80px) 52px 80px;
+  background:var(--forest);position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 100% at 105% 40%,rgba(200,245,60,.14) 0%,transparent 60%);
+}
+.page-hero-inner{position:relative;z-index:1;max-width:780px}
+.ph-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:20px;
+}
+.ph-label::before{content:'';width:20px;height:1px;background:var(--lime)}
+.page-hero h1{
+  font-family:var(--serif);
+  font-size:clamp(38px,5.5vw,70px);
+  line-height:1.04;color:var(--cream);margin-bottom:20px;
+}
+.page-hero p{
+  font-size:16.5px;font-weight:300;
+  color:rgba(247,243,236,.58);line-height:1.78;max-width:560px;
+}
+
+/* ── SECTION ────────────────────────────── */
+.section{padding:96px 52px}
+.section--warm{background:var(--warm)}
+.section--forest{background:var(--forest);color:var(--cream)}
+.section--white{background:var(--white)}
+.section--sand{background:var(--sand)}
+
+/* ── TYPOGRAPHY HELPERS ─────────────────── */
+.label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--forest);margin-bottom:16px;
+}
+.label::before{content:'';width:16px;height:1.5px;background:var(--forest)}
+.label--lime{color:var(--lime)}
+.label--lime::before{background:var(--lime)}
+h2.h2{font-family:var(--serif);font-size:clamp(30px,4vw,54px);line-height:1.06;color:inherit}
+h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
+.body-lg{font-size:16px;font-weight:300;color:var(--stone);line-height:1.8}
+.body-lg--light{color:rgba(247,243,236,.55)}
+
+/* ── BUTTONS ────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:100px;
+  font-family:var(--sans);font-size:13.5px;font-weight:600;
+  cursor:pointer;border:none;text-decoration:none;letter-spacing:.1px;
+  transition:background .18s var(--ease),transform .15s var(--ease),color .18s;
+}
+.btn:active{transform:scale(.97)!important}
+.btn-forest{background:var(--forest);color:var(--lime)}
+.btn-forest:hover{background:var(--lime);color:var(--ink);transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:var(--lime-d);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--rule)}
+.btn-outline:hover{border-color:var(--forest);color:var(--forest)}
+.btn-outline-light{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.15)}
+.btn-outline-light:hover{background:rgba(200,245,60,.12);border-color:var(--lime);color:var(--lime)}
+.btn-lg{padding:16px 34px;font-size:15px}
+
+/* ── TAGS / PILLS ───────────────────────── */
+.pill{display:inline-block;padding:5px 13px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.4px}
+.pill-forest{background:rgba(28,56,41,.1);color:var(--forest)}
+.pill-lime{background:var(--lime);color:var(--ink)}
+.pill-dark{background:rgba(247,243,236,.08);color:rgba(247,243,236,.7)}
+.pill-sand{background:var(--sand);color:var(--stone)}
+
+/* ── REVEAL ─────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-l{opacity:0;transform:translateX(-26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal-r{opacity:0;transform:translateX(26px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.reveal.in,.reveal-l.in,.reveal-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.40s}
+
+/* ── SPEC ROW ───────────────────────────── */
+.spec-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-radius:8px}
+.spec-row+.spec-row{margin-top:8px}
+.spec-row--dark{background:rgba(247,243,236,.06)}
+.spec-row--light{background:var(--warm)}
+.spec-lbl{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.spec-lbl--dark{color:rgba(247,243,236,.38)}
+.spec-lbl--light{color:var(--stone)}
+.spec-val--dark{font-size:13px;font-weight:500;color:var(--cream)}
+.spec-val--light{font-size:13px;font-weight:500;color:var(--ink)}
+
+/* ── FORM ───────────────────────────────── */
+.form-grid{display:flex;flex-direction:column;gap:18px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-label{font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--stone)}
+.req{color:var(--forest);margin-left:2px}
+.form-input,.form-select,.form-textarea{
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  background:var(--white);border:1.5px solid var(--rule);
+  border-radius:10px;padding:12px 15px;outline:none;
+  transition:border-color .18s,box-shadow .18s;
+  -webkit-appearance:none;appearance:none;width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--forest);box-shadow:0 0 0 3px rgba(28,56,41,.1)
+}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--sand)}
+.form-textarea{min-height:110px;resize:vertical;line-height:1.6}
+.form-hint{font-size:12px;color:var(--stone);margin-top:5px;line-height:1.5}
+.form-cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-cb-label{
+  display:flex;align-items:flex-start;gap:10px;cursor:pointer;
+  padding:10px 12px;border-radius:8px;border:1.5px solid var(--rule);
+  font-size:13.5px;color:var(--ink);line-height:1.4;
+  transition:border-color .15s,background .15s;
+}
+.form-cb-label:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.form-cb-label input{margin-top:1px;accent-color:var(--forest);flex-shrink:0}
+.form-success{
+  display:none;background:rgba(28,56,41,.07);border:1.5px solid rgba(28,56,41,.2);
+  border-radius:10px;padding:16px 20px;margin-top:12px;
+  font-size:14px;color:var(--forest);font-weight:500;line-height:1.5;
+}
+.upload-zone{
+  border:2px dashed var(--rule);border-radius:10px;padding:28px 20px;
+  text-align:center;cursor:pointer;background:var(--white);
+  transition:border-color .18s,background .18s;
+}
+.upload-zone:hover{border-color:var(--forest);background:rgba(28,56,41,.04)}
+.upload-zone p{font-size:14px;color:var(--stone);margin-top:8px}
+
+/* ── FAQ ────────────────────────────────── */
+.faq-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.faq-tab{
+  background:var(--warm);color:var(--stone);border:none;
+  padding:9px 20px;border-radius:100px;
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  cursor:pointer;transition:background .15s,color .15s;
+}
+.faq-tab.active,.faq-tab:hover{background:var(--forest);color:var(--lime)}
+.faq-group{display:none}
+.faq-group.active{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid var(--rule);transition:border-color .18s}
+.faq-item.open{border-color:var(--forest)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px;cursor:pointer;gap:16px;
+  font-size:15px;font-weight:500;line-height:1.4;color:var(--ink);
+}
+.faq-arrow{
+  width:28px;height:28px;border-radius:50%;background:var(--warm);
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+  transition:transform .3s var(--ease),background .2s;
+}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--lime)}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faq-body-inner{padding:0 20px 20px;font-size:14.5px;color:var(--stone);line-height:1.75}
+.faq-item.open .faq-body{max-height:500px}
+
+/* ── FOOTER ─────────────────────────────── */
+.footer{background:var(--ink);color:rgba(247,243,236,.4);padding:72px 52px 32px}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px;
+}
+.footer-logo{font-family:var(--serif);font-size:21px;color:rgba(247,243,236,.9);margin-bottom:14px;display:flex;align-items:center;gap:3px}
+.footer-logo .accent{color:var(--lime);font-style:italic}
+.footer-brand p{font-size:13px;line-height:1.72;max-width:260px}
+.footer-col h6{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(247,243,236,.5);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(247,243,236,.38);margin-bottom:11px;transition:color .18s}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11.5px}
+.footer-badge{background:rgba(200,245,60,.1);border:1px solid rgba(200,245,60,.2);color:var(--lime);padding:4px 12px;border-radius:100px;font-size:11px}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .nav{padding:0 22px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .section{padding:68px 22px}
+  .page-hero{padding:calc(var(--nav-h)+48px) 22px 56px}
+  .form-row-2{grid-template-columns:1fr}
+  .form-cb-grid{grid-template-columns:1fr}
+  .footer{padding:56px 22px 28px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+}
+
+.prog-hero-card{display:grid;grid-template-columns:1fr 1fr;border-radius:18px;overflow:hidden;margin-bottom:0}
+.prog-img-side{min-height:480px;overflow:hidden;position:relative}
+.prog-img-side img{height:100%;object-fit:cover}
+.prog-body-side{padding:52px;display:flex;flex-direction:column;justify-content:center}
+.prog-body-side.dark{background:var(--forest)}
+.prog-body-side.light{background:var(--warm)}
+.prog-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px}
+.prog-eyebrow.lime{color:var(--lime)}.prog-eyebrow.lime::before{content:'';width:16px;height:1px;background:var(--lime)}
+.prog-eyebrow.forest{color:var(--forest)}.prog-eyebrow.forest::before{content:'';width:16px;height:1px;background:var(--forest)}
+.prog-body-side h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);line-height:1.06;margin-bottom:14px}
+.prog-body-side h2.light-h{color:var(--cream)}
+.prog-body-side h2.dark-h{color:var(--ink)}
+.prog-body-side .prog-sub{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;opacity:.5}
+.prog-body-side p.lp{font-size:15px;line-height:1.78;color:rgba(247,243,236,.6);margin-bottom:14px}
+.prog-body-side p.dp{font-size:15px;line-height:1.78;color:var(--stone);margin-bottom:14px}
+.prog-pills3{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.spec-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:0}
+.learn-why{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.pw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.pw{background:var(--white);border-radius:12px;padding:22px;border:1px solid var(--rule)}
+.pw-num{font-family:var(--serif);font-size:40px;line-height:1;color:rgba(14,14,12,.07);margin-bottom:10px}
+.pw h4{font-family:var(--serif);font-size:15px;margin-bottom:7px}
+.pw p{font-size:13px;color:var(--stone);line-height:1.6}
+.pw.dark{background:rgba(247,243,236,.04);border-color:rgba(247,243,236,.07)}
+.pw.dark h4{color:var(--cream)}
+.pw.dark p{color:rgba(247,243,236,.45)}
+.pw.dark .pw-num{color:rgba(247,243,236,.07)}
+.skills-box{background:rgba(200,245,60,.1);border-left:3px solid var(--lime);border-radius:0 10px 10px 0;padding:22px 24px;margin-top:18px}
+.skills-box h4{font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:12px}
+.skill-li{font-size:13.5px;color:rgba(247,243,236,.7);line-height:1.5;padding:5px 0;display:flex;gap:10px;align-items:flex-start}
+.skill-li::before{content:'→';color:var(--lime);font-weight:700;flex-shrink:0}
+.skills-box-light{background:rgba(28,56,41,.06);border-left:3px solid var(--forest);border-radius:0 10px 10px 0;padding:22px 24px;margin-top:18px}
+.skills-box-light h4{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:12px}
+.skill-li-light{font-size:13.5px;color:var(--stone);line-height:1.5;padding:5px 0;display:flex;gap:10px;align-items:flex-start}
+.skill-li-light::before{content:'→';color:var(--forest);font-weight:700;flex-shrink:0}
+.block-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.blk{background:var(--white);border-radius:12px;border:1px solid var(--rule);padding:20px}
+.blk h5{font-family:var(--serif);font-size:15px;margin-bottom:8px}
+.blk p{font-size:13px;color:var(--stone);line-height:1.65}
+.ndis-align{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.ndis-cards{display:flex;flex-direction:column;gap:12px}
+.ndis-card{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--white);border-radius:12px;padding:18px 20px;border:1px solid var(--rule)}
+.ndis-ic{width:44px;height:44px;background:rgba(28,56,41,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.ndis-card h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.ndis-card p{font-size:13px;color:var(--stone);line-height:1.5}
+@media(max-width:960px){
+  .prog-hero-card{grid-template-columns:1fr}
+  .prog-img-side{min-height:240px}
+  .prog-body-side{padding:32px 22px}
+  .learn-why{grid-template-columns:1fr}
+  .pw-grid{grid-template-columns:1fr 1fr}
+  .ndis-align{grid-template-columns:1fr;gap:40px}
+  .block-split{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo">Sound<span class="accent">Haven</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="classes.html" class="active">Programs</a></li>
+    <li><a href="enrol.html">Enrol</a></li>
+    <li><a href="faqs.html">FAQs</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li></ul>
+  <div class="hamburger" id="hb" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mob-overlay" id="mob">
+  <span class="mob-close" onclick="toggleMenu()">✕</span>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="classes.html" onclick="toggleMenu()">Programs</a>
+  <a href="enrol.html" onclick="toggleMenu()">Enrol</a>
+  <a href="faqs.html" onclick="toggleMenu()">FAQs</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-label">Our Programs</div>
+    <h1>Two programs. Crafted to take you somewhere.</h1>
+    <p>DJ &amp; Mixing or Music Production — both run in-person at our Melbourne studio. Fully equipped, fully accessible, and built around you and your NDIS goals. No experience required.</p>
+  </div>
+</section>
+
+<!-- PROGRAM 01 -->
+<section class="section section--white">
+  <div class="label reveal" style="margin-bottom:28px">Program 01</div>
+  <div class="prog-hero-card reveal">
+    <div class="prog-img-side"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900&q=85" alt="Person DJing"/></div>
+    <div class="prog-body-side dark">
+      <div class="prog-eyebrow lime">DJ &amp; Mixing — In Person</div>
+      <h2 class="light-h">DJ &amp; Mixing</h2>
+      <div class="prog-sub" style="color:rgba(247,243,236,.5)">10-WEEK PROGRAM · MELBOURNE STUDIO</div>
+      <p class="lp">Hands-on DJing and live mixing in our fully equipped studio. From the first time you touch the decks to performing your own set — this program takes you all the way there, at your own pace.</p>
+      <p class="lp">Tactile, immediate, and deeply satisfying — DJing is one of the most effective formats we run for building focus, sensory regulation, and genuine confidence in people who haven't responded to traditional supports.</p>
+      <div class="prog-pills3">
+        <span class="pill pill-dark">Sensory Regulation</span>
+        <span class="pill pill-dark">Focus &amp; Attention</span>
+        <span class="pill pill-dark">Social Confidence</span>
+        <span class="pill pill-dark">Independence</span>
+        <span class="pill pill-dark">Routine Building</span>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Duration</span><span class="spec-val--dark">10 Weeks — one program block</span></div>
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Sessions</span><span class="spec-val--dark">2 × 90 minutes per week</span></div>
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Location</span><span class="spec-val--dark">Melbourne, VIC (fully accessible)</span></div>
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Equipment</span><span class="spec-val--dark">All provided on-site</span></div>
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Experience</span><span class="spec-val--dark">None required — ever</span></div>
+        <div class="spec-row spec-row--dark"><span class="spec-lbl spec-lbl--dark">Eligibility</span><span class="spec-val--dark">NDIS participants — physical or neurodivergent</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DJ LEARN + WHY -->
+<section class="section section--warm">
+  <div class="learn-why reveal">
+    <div>
+      <div class="label">What You'll Learn</div>
+      <h3 class="h3" style="margin-bottom:14px">From zero experience to your own live set.</h3>
+      <div class="pw-grid" style="grid-template-columns:1fr 1fr">
+        <div class="pw"><div class="pw-num">01</div><h4>Controller Basics</h4><p>Get comfortable with the gear — cueing, playing, navigating. Zero experience assumed.</p></div>
+        <div class="pw"><div class="pw-num">02</div><h4>Beatmatching &amp; Mixing</h4><p>Tempo, phrasing, transitions. The craft of moving seamlessly between tracks.</p></div>
+        <div class="pw"><div class="pw-num">03</div><h4>EQ, FX &amp; Sound</h4><p>Shape and colour your sound in real time with filters, effects, and EQ.</p></div>
+        <div class="pw"><div class="pw-num">04</div><h4>Set Building &amp; Performance</h4><p>Curation, energy, structure. Build a real set and perform it.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="label">Why This Program</div>
+      <h3 class="h3" style="margin-bottom:14px">DJing clicks for people who haven't clicked with anything else.</h3>
+      <p class="body-lg" style="margin-bottom:14px">The feedback loop between action and sound is almost instant — which makes it uniquely effective for building focus, sensory regulation, and emotional regulation in people who haven't connected with traditional supports. Neurodivergent participants in particular often find it clicks in a way nothing else has.</p>
+      <p class="body-lg" style="margin-bottom:14px">It also builds community. The studio becomes a shared space where music is a common language and isolation starts to shrink.</p>
+      <div class="skills-box-light">
+        <h4>Where These Skills Go in the Real World</h4>
+        <div class="skill-li-light">Perform at events, community gatherings, and local venues</div>
+        <div class="skill-li-light">Work as a DJ at parties, weddings, or corporate events</div>
+        <div class="skill-li-light">Build a social media presence and creative content brand</div>
+        <div class="skill-li-light">Explore careers in the live music and events industry</div>
+        <div class="skill-li-light">Use music as a daily tool for emotional regulation and wellbeing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 02 -->
+<section class="section section--white">
+  <div class="label reveal" style="margin-bottom:28px">Program 02</div>
+  <div class="prog-hero-card reveal" style="flex-direction:row-reverse">
+    <div class="prog-img-side" style="order:2"><img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=900&q=85" alt="Music production"/></div>
+    <div class="prog-body-side light" style="order:1">
+      <div class="prog-eyebrow forest">Music Production — In Person</div>
+      <h2 class="dark-h">Music Production</h2>
+      <div class="prog-sub" style="color:var(--stone)">10-WEEK BLOCKS · MELBOURNE STUDIO</div>
+      <p class="dp">Beat making, sound design, arrangement, and music production using Ableton Live and FL Studio. Start with one 10-week block and see where it takes you. Come back for a second block and go deeper — more technical, more advanced, more you.</p>
+      <p class="dp">Everything is provided on-site. No prior music knowledge needed. Just the curiosity to make something.</p>
+      <div class="block-split">
+        <div class="blk"><h5>Block 1 — Foundations</h5><p>Beat making, sampling, sound design basics, DAW navigation, and building your first arrangements.</p></div>
+        <div class="blk"><h5>Block 2 — Advanced Production</h5><p>Deeper arrangement, mixing, mastering, AI tools, and completing a full production-ready track.</p></div>
+      </div>
+      <div class="prog-pills3" style="margin-top:16px">
+        <span class="pill pill-forest">Executive Function</span>
+        <span class="pill pill-forest">Emotional Regulation</span>
+        <span class="pill pill-forest">Vocational Pathway</span>
+        <span class="pill pill-forest">Creative Expression</span>
+      </div>
+      <div class="spec-rows">
+        <div class="spec-row spec-row--light"><span class="spec-lbl spec-lbl--light">Block Structure</span><span class="spec-val--light">10 weeks per block</span></div>
+        <div class="spec-row spec-row--light"><span class="spec-lbl spec-lbl--light">Sessions</span><span class="spec-val--light">2 × 90 minutes per week</span></div>
+        <div class="spec-row spec-row--light"><span class="spec-lbl spec-lbl--light">Location</span><span class="spec-val--light">Melbourne, VIC (fully accessible)</span></div>
+        <div class="spec-row spec-row--light"><span class="spec-lbl spec-lbl--light">Software</span><span class="spec-val--light">Ableton Live &amp; FL Studio (on-site)</span></div>
+        <div class="spec-row spec-row--light"><span class="spec-lbl spec-lbl--light">Eligibility</span><span class="spec-val--light">NDIS — physical or neurodivergent</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION LEARN + WHY -->
+<section class="section section--forest">
+  <div class="learn-why reveal">
+    <div>
+      <div class="label label--lime">What You'll Learn</div>
+      <h3 class="h3" style="color:var(--cream);margin-bottom:14px">From your first beat to something you're genuinely proud of.</h3>
+      <div class="pw-grid" style="grid-template-columns:1fr 1fr;margin-top:18px">
+        <div class="pw dark"><div class="pw-num">01</div><h4>Beat Making</h4><p>Rhythm programming, drum patterns, groove, and swing.</p></div>
+        <div class="pw dark"><div class="pw-num">02</div><h4>Sound Design</h4><p>Synthesis, sampling, and shaping sounds from scratch.</p></div>
+        <div class="pw dark"><div class="pw-num">03</div><h4>Arrangement</h4><p>Song structure, progression, and building a full track.</p></div>
+        <div class="pw dark"><div class="pw-num">04</div><h4>Mix &amp; Master</h4><p>Polishing your track so it's ready to share with the world.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="label label--lime">Why This Program</div>
+      <h3 class="h3" style="color:var(--cream);margin-bottom:14px">Production teaches you to finish things — and that changes how you see yourself.</h3>
+      <p class="body-lg body-lg--light" style="margin-bottom:14px">The process of building a track from scratch — planning, making decisions, handling frustration, feeling the satisfaction of finishing — is an exercise in executive function, emotional regulation, and sustained focus that can't be replicated in a classroom.</p>
+      <p class="body-lg body-lg--light" style="margin-bottom:14px">Block 1 gives participants a strong, structured foundation. If they choose to return for Block 2, they go further — more technical depth, more creative complexity, and a finished body of work they're genuinely proud of.</p>
+      <div class="skills-box">
+        <h4>Where These Skills Go in the Real World</h4>
+        <div class="skill-li">Release original music on Spotify, Apple Music, and all major platforms</div>
+        <div class="skill-li">Produce beats for other artists and earn from your work</div>
+        <div class="skill-li">Score and produce music for film, video, and online content</div>
+        <div class="skill-li">Pursue a career as a music producer, sound designer, or audio engineer</div>
+        <div class="skill-li">Start a freelance production business on your own terms</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NDIS ALIGNMENT -->
+<section class="section section--warm">
+  <div class="ndis-align reveal">
+    <div>
+      <div class="label">NDIS Funding</div>
+      <h2 class="h2" style="margin-bottom:14px">Built to link to your plan. Clear to your coordinator from day one.</h2>
+      <p class="body-lg" style="margin-bottom:16px">Both programs align clearly with NDIS Capacity Building funding categories. We work directly with support coordinators to document outcomes, track progress, and ensure every session earns its place in the participant's plan.</p>
+      <p class="body-lg" style="margin-bottom:32px">Open to NDIS participants with physical disability or neurodivergent conditions.</p>
+      <a href="enrol.html" class="btn btn-forest">Apply for a Place →</a>
+    </div>
+    <div class="ndis-cards reveal-r">
+      <div class="ndis-card"><div class="ndis-ic">📋</div><div><h4>Capacity Building — Social &amp; Community Participation</h4><p>Group sessions, creative collaboration, and lasting community connection.</p></div></div>
+      <div class="ndis-card"><div class="ndis-ic">🏠</div><div><h4>Capacity Building — Improved Daily Living</h4><p>Routine, independence, emotional regulation, and structured skill development.</p></div></div>
+      <div class="ndis-card"><div class="ndis-ic">🤝</div><div><h4>Core Supports — Community Participation</h4><p>Available where a support worker attends sessions alongside the participant.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Sound<span class="accent">Haven</span></div>
+      <p>A creative studio where NDIS participants build real skills, genuine confidence, and lasting community — through music production and DJing in Melbourne.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Programs</h6>
+      <a href="classes.html">DJ &amp; Mixing</a>
+      <a href="classes.html">Music Production</a>
+      <a href="enrol.html">Apply Now</a>
+    </div>
+    <div class="footer-col">
+      <h6>Navigate</h6>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h6>Legal</h6>
+      <a href="legal.html">Privacy Policy</a>
+      <a href="legal.html">Terms of Use</a>
+      <h6 style="margin-top:18px">Contact</h6>
+      <a href="mailto:soundhavenau@gmail.com">soundhavenau@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sound Haven. NDIS Provider. Melbourne, VIC.</span>
+    <span class="footer-badge">Melbourne, VIC</span>
+  </div>
+</footer>
+<script>
+const navEl = document.getElementById('mainNav');
+if(navEl){
+  const s=()=>navEl.classList.toggle('solid',scrollY>24);
+  window.addEventListener('scroll',s,{passive:true});s();
+}
+const hb=document.getElementById('hb'),mob=document.getElementById('mob');
+function toggleMenu(){if(hb&&mob){hb.classList.toggle('open');mob.classList.toggle('open')}}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}}),{threshold:.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const it=b.closest('.faq-item'),open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open)it.classList.add('open');
+  });
+});
+function showFaq(cat,btn){
+  document.querySelectorAll('.faq-group').forEach(g=>g.classList.remove('active'));
+  document.querySelectorAll('.faq-tab').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById('fq-'+cat);
+  if(el)el.classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+function send(sid,bid){
+  const b=document.getElementById(bid),s=document.getElementById(sid);
+  if(!b||!s)return;
+  b.disabled=true;b.textContent='Sent ✓';
+  s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
