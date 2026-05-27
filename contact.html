@@ -365,6 +365,9 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
     </div>
     <div class="reveal-r">
       <h3 style="font-family:var(--serif);font-size:22px;margin-bottom:22px">Send us a message</h3>
+      <form action="https://formspree.io/f/xkoepyjb" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from Sound Haven website"/>
+      <input type="hidden" name="_replyto" value="soundhavenau@gmail.com"/>
       <div class="form-grid">
         <div class="form-row-2">
           <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="First name"/></div>
@@ -382,10 +385,10 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           <textarea class="form-textarea" placeholder="Tell us about the participant, their goals, or anything you'd like to know..."></textarea>
         </div>
         <div>
-          <button id="contactBtn" onclick="send('contactSuccess','contactBtn')" class="btn btn-forest">Send Message →</button>
-          <div class="form-success" id="contactSuccess">✓ Message sent — we'll be in touch within 48 hours.</div>
+          <button type="submit" class="btn btn-forest">Send Message →</button>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </section>

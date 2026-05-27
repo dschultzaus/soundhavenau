@@ -391,7 +391,9 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
     </div>
 
     <div class="reveal-r">
-      <form id="enrolForm" onsubmit="event.preventDefault();send('enrolSuccess','enrolBtn')">
+      <form id="enrolForm" action="https://formspree.io/f/xkoepyjb" method="POST">
+      <input type="hidden" name="_subject" value="New enrolment application — Sound Haven"/>
+      <input type="hidden" name="_replyto" value="soundhavenau@gmail.com"/>
 
         <div class="form-sec">
           <h3 class="form-sec-title">Participant Information</h3>
