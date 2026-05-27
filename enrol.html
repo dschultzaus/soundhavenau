@@ -399,18 +399,18 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           <h3 class="form-sec-title">Participant Information</h3>
           <div class="form-grid">
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">First Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="First name" required/></div>
-              <div class="form-group"><label class="form-label">Last Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="Last name" required/></div>
+              <div class="form-group"><label class="form-label">First Name<span class="req">*</span></label><input class="form-input" type="text" name="first_name" placeholder="First name" required/></div>
+              <div class="form-group"><label class="form-label">Last Name<span class="req">*</span></label><input class="form-input" type="text" name="last_name" placeholder="Last name" required/></div>
             </div>
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Date of Birth<span class="req">*</span></label><input class="form-input" type="date" required/></div>
+              <div class="form-group"><label class="form-label">Date of Birth<span class="req">*</span></label><input class="form-input" type="date" name="dob" required/></div>
               <div class="form-group"><label class="form-label">Gender (optional)</label><select class="form-select"><option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Other</option></select></div>
             </div>
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Email<span class="req">*</span></label><input class="form-input" type="email" placeholder="email@address.com" required/></div>
-              <div class="form-group"><label class="form-label">Phone<span class="req">*</span></label><input class="form-input" type="tel" placeholder="04xx xxx xxx" required/></div>
+              <div class="form-group"><label class="form-label">Email<span class="req">*</span></label><input class="form-input" type="email" name="email" placeholder="email@address.com" required/></div>
+              <div class="form-group"><label class="form-label">Phone<span class="req">*</span></label><input class="form-input" type="tel" name="phone" placeholder="04xx xxx xxx" required/></div>
             </div>
-            <div class="form-group"><label class="form-label">Residential Address<span class="req">*</span></label><input class="form-input" type="text" placeholder="Street, suburb, state, postcode" required/></div>
+            <div class="form-group"><label class="form-label">Residential Address<span class="req">*</span></label><input class="form-input" type="text" name="address" placeholder="Street, suburb, state, postcode" required/></div>
           </div>
         </div>
 
@@ -418,7 +418,7 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           <h3 class="form-sec-title">NDIS Details</h3>
           <div class="form-grid">
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">NDIS Participant Number<span class="req">*</span></label><input class="form-input" type="text" placeholder="43XXXXXXXX" required/></div>
+              <div class="form-group"><label class="form-label">NDIS Participant Number<span class="req">*</span></label><input class="form-input" type="text" name="ndis_number" placeholder="43XXXXXXXX" required/></div>
               <div class="form-group"><label class="form-label">Plan Management Type<span class="req">*</span></label><select class="form-select" required><option value="">Select</option><option>NDIA Managed</option><option>Plan Managed</option><option>Self Managed</option></select></div>
             </div>
             <div class="form-row-2">
@@ -433,12 +433,12 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           <p class="form-sec-sub">We need your support coordinator's details and a signed letter of support confirming you are fit and able to attend the program. See document section below.</p>
           <div class="form-grid">
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Coordinator Full Name<span class="req">*</span></label><input class="form-input" type="text" placeholder="Full name" required/></div>
-              <div class="form-group"><label class="form-label">Organisation / Agency</label><input class="form-input" type="text" placeholder="Organisation name"/></div>
+              <div class="form-group"><label class="form-label">Coordinator Full Name<span class="req">*</span></label><input class="form-input" type="text" name="coordinator_name" placeholder="Full name" required/></div>
+              <div class="form-group"><label class="form-label">Organisation / Agency</label><input class="form-input" type="text" name="coordinator_organisation" placeholder="Organisation name"/></div>
             </div>
             <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Coordinator Email<span class="req">*</span></label><input class="form-input" type="email" placeholder="coordinator@agency.com.au" required/></div>
-              <div class="form-group"><label class="form-label">Coordinator Phone<span class="req">*</span></label><input class="form-input" type="tel" placeholder="Phone number" required/></div>
+              <div class="form-group"><label class="form-label">Coordinator Email<span class="req">*</span></label><input class="form-input" type="email" name="coordinator_email" placeholder="coordinator@agency.com.au" required/></div>
+              <div class="form-group"><label class="form-label">Coordinator Phone<span class="req">*</span></label><input class="form-input" type="tel" name="coordinator_phone" placeholder="Phone number" required/></div>
             </div>
           </div>
         </div>
@@ -447,8 +447,8 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           <h3 class="form-sec-title">Disability &amp; Access Requirements</h3>
           <p class="form-sec-sub">This information helps us prepare the right environment and support. All information is strictly confidential and used solely for program delivery.</p>
           <div class="form-grid">
-            <div class="form-group"><label class="form-label">Primary Disability / Diagnosis<span class="req">*</span></label><input class="form-input" type="text" placeholder="e.g. Cerebral Palsy, ADHD, ASD, Spinal Cord Injury, ABI, Psychosocial disability" required/></div>
-            <div class="form-group"><label class="form-label">Secondary Conditions (if any)</label><input class="form-input" type="text" placeholder="Any additional diagnoses or conditions"/></div>
+            <div class="form-group"><label class="form-label">Primary Disability / Diagnosis<span class="req">*</span></label><input class="form-input" type="text" name="primary_disability" placeholder="e.g. Cerebral Palsy, ADHD, ASD, Spinal Cord Injury, ABI, Psychosocial disability" required/></div>
+            <div class="form-group"><label class="form-label">Secondary Conditions (if any)</label><input class="form-input" type="text" name="secondary_conditions" placeholder="Any additional diagnoses or conditions"/></div>
             <div class="form-group">
               <label class="form-label">Physical &amp; Mobility Access Needs</label>
               <div class="cb-grid">
@@ -460,11 +460,11 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
                 <label class="form-cb-label"><input type="checkbox"/> No specific physical access needs</label>
               </div>
             </div>
-            <div class="form-group"><label class="form-label">Sensory or Communication Needs</label><textarea class="form-textarea" style="min-height:80px" placeholder="e.g. hearing aids, visual impairment, preferred communication style, noise sensitivity, AAC device..."></textarea></div>
-            <div class="form-group"><label class="form-label">Behavioural or Environmental Considerations</label><textarea class="form-textarea" style="min-height:80px" placeholder="e.g. lighting preferences, preferred session structure, things that help you focus, things to be aware of..."></textarea></div>
-            <div class="form-group"><label class="form-label">Any Other Requirements</label><textarea class="form-textarea" placeholder="Anything else that will help us prepare the best experience for you..."></textarea></div>
+            <div class="form-group"><label class="form-label">Sensory or Communication Needs</label><textarea class="form-textarea" name="sensory_needs" style="min-height:80px" placeholder="e.g. hearing aids, visual impairment, preferred communication style, noise sensitivity, AAC device..."></textarea></div>
+            <div class="form-group"><label class="form-label">Behavioural or Environmental Considerations</label><textarea class="form-textarea" name="behavioural_notes" style="min-height:80px" placeholder="e.g. lighting preferences, preferred session structure, things that help you focus, things to be aware of..."></textarea></div>
+            <div class="form-group"><label class="form-label">Any Other Requirements</label><textarea class="form-textarea" name="other_requirements" placeholder="Anything else that will help us prepare the best experience for you..."></textarea></div>
             <div class="form-group"><label class="form-label">Will a Support Worker Attend?<span class="req">*</span></label>
-              <select class="form-select" required>
+              <select class="form-select" name="support_worker" required>
                 <option value="">Select</option>
                 <option>Yes — support worker will attend all sessions</option>
                 <option>Yes — support worker will attend some sessions</option>
@@ -482,7 +482,7 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
           </div>
           <div class="form-grid">
             <div class="form-group"><label class="form-label">Program<span class="req">*</span></label>
-              <select class="form-select" required>
+              <select class="form-select" name="program_choice" required>
                 <option value="">Select a program</option>
                 <option>DJ &amp; Mixing (10 weeks)</option>
                 <option>Music Production — Block 1 (10 weeks)</option>
@@ -490,7 +490,7 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
               </select>
             </div>
             <div class="form-group"><label class="form-label">Session Format Preference</label>
-              <select class="form-select">
+              <select class="form-select" name="session_format">
                 <option value="">No preference</option>
                 <option>1:1 sessions preferred</option>
                 <option>Group sessions preferred</option>
@@ -498,7 +498,7 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
               </select>
             </div>
             <div class="form-group"><label class="form-label">Anything else we should know?</label>
-              <textarea class="form-textarea" placeholder="Goals, interests, questions, context — anything that helps us prepare for you..."></textarea>
+              <textarea class="form-textarea" name="message" placeholder="Goals, interests, questions, context — anything that helps us prepare for you..."></textarea>
             </div>
           </div>
         </div>
