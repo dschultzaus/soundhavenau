@@ -315,6 +315,17 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
 .ap h4{font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:6px}
 .ap p{font-size:13px;color:rgba(247,243,236,.45);line-height:1.65}
 @media(max-width:768px){.ab-split{grid-template-columns:1fr;gap:40px}.vals{grid-template-columns:1fr}.ap-list{grid-template-columns:1fr}}
+
+/* ── MOBILE HERO FIX ── */
+@media(max-width:768px){
+  .page-hero{padding:calc(var(--nav-h) + 48px) 20px 52px}
+  .page-hero-inner{max-width:100%;padding:0 2px}
+  .page-hero h1{font-size:clamp(28px,7.5vw,42px);letter-spacing:-0.5px;line-height:1.1;word-break:break-word}
+  .page-hero p{font-size:15px;line-height:1.7;padding-right:4px}
+  .ph-label{font-size:9px;letter-spacing:2px}
+  .section{padding:56px 20px}
+}
+
 </style>
 </head>
 <body>
