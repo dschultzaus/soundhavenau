@@ -346,6 +346,166 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
   .section{padding:56px 20px}
 }
 
+
+/* ── ENROL COMING SOON PAGE ─────────────────────── */
+.enrol-section {
+  padding: 80px 52px;
+  background: var(--cream);
+}
+.enrol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* INFO COLUMN */
+.info-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2.8px;
+  text-transform: uppercase; color: var(--sage-d);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.info-label::before {
+  content: ''; display: inline-block;
+  width: 16px; height: 1.5px; background: var(--sage-d);
+}
+.info-h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.08; letter-spacing: -0.5px;
+  color: var(--ink); margin-bottom: 28px;
+}
+.prog-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.prog-info-card {
+  background: var(--white); border-radius: 14px;
+  padding: 22px 24px;
+  border: 1.5px solid var(--rule);
+  transition: border-color .2s;
+}
+.prog-info-card:hover { border-color: var(--sage-d); }
+.prog-badge {
+  display: inline-block;
+  background: var(--forest); color: var(--lime);
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 11px; border-radius: 100px;
+  margin-bottom: 10px;
+}
+.prog-badge--2 { background: var(--warm); color: var(--forest); }
+.prog-info-card h3 {
+  font-family: var(--serif);
+  font-size: 20px; color: var(--ink);
+  margin-bottom: 8px; line-height: 1.15;
+}
+.prog-info-card p {
+  font-size: 13.5px; color: var(--stone);
+  line-height: 1.7; margin-bottom: 14px;
+}
+.prog-detail-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0;
+  border-top: 1px solid var(--rule);
+  font-size: 12.5px;
+}
+.prog-detail-row span:first-child { color: var(--stone); font-weight: 600; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; }
+.prog-detail-row span:last-child  { color: var(--ink); font-weight: 500; }
+.ndis-note {
+  background: var(--sage-pale, #EBF4EE);
+  border-radius: 12px; padding: 20px 22px;
+  border-left: 3px solid var(--sage-d);
+}
+.ndis-note-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--sage-d);
+  margin-bottom: 10px;
+}
+.ndis-note p {
+  font-size: 13px; color: var(--stone);
+  line-height: 1.7; margin-bottom: 8px;
+}
+.ndis-note p:last-child { margin-bottom: 0; }
+
+/* FORM COLUMN */
+.enrol-form-col { position: sticky; top: calc(var(--nav-h) + 20px); }
+.coming-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--forest); color: var(--lime);
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 7px 16px; border-radius: 100px;
+  margin-bottom: 22px;
+}
+.coming-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--lime);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(.75); }
+}
+.waitlist-h2 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.8vw, 48px);
+  line-height: 1.06; letter-spacing: -1px;
+  color: var(--ink); margin-bottom: 14px;
+}
+.waitlist-sub {
+  font-size: 15px; font-weight: 300; color: var(--stone);
+  line-height: 1.75; margin-bottom: 28px;
+}
+.waitlist-form { display: flex; flex-direction: column; gap: 14px; }
+.wl-group { display: flex; flex-direction: column; gap: 6px; }
+.wl-label {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 1.8px; text-transform: uppercase; color: var(--stone);
+}
+.req { color: var(--sage-d); margin-left: 2px; }
+.wl-input {
+  font-family: var(--sans); font-size: 15px; color: var(--ink);
+  background: var(--white); border: 1.5px solid var(--rule);
+  border-radius: 10px; padding: 12px 15px; outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  -webkit-appearance: none; appearance: none; width: 100%;
+}
+.wl-input:focus {
+  border-color: var(--sage-d);
+  box-shadow: 0 0 0 3px rgba(28,56,41,.1);
+}
+.wl-input::placeholder { color: var(--sand-d, #C8BFB0); }
+.wl-textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+.wl-btn {
+  background: var(--forest); color: var(--lime);
+  border: none; border-radius: 100px;
+  font-family: var(--sans); font-size: 14px; font-weight: 600;
+  padding: 15px 32px; cursor: pointer;
+  transition: background .18s, transform .15s;
+  align-self: flex-start; letter-spacing: .1px;
+}
+.wl-btn:hover { background: var(--lime); color: var(--ink); transform: translateY(-2px); }
+.wl-btn:active { transform: scale(.97); }
+.wl-success {
+  display: none;
+  background: rgba(28,56,41,.07); border: 1.5px solid rgba(28,56,41,.2);
+  border-radius: 10px; padding: 14px 18px;
+  font-size: 14px; color: var(--forest); font-weight: 500; line-height: 1.5;
+}
+.wl-privacy {
+  font-size: 12px; color: var(--stone); margin-top: 14px; line-height: 1.5;
+}
+.wl-privacy a { color: var(--sage-d); text-decoration: underline; }
+
+/* ── MOBILE ─────────────────────────────────────────────── */
+@media(max-width: 768px) {
+  .enrol-section { padding: 56px 20px; }
+  .enrol-grid { grid-template-columns: 1fr; gap: 44px; }
+  .enrol-form-col { position: static; }
+  .info-h2 { font-size: 28px; }
+  .waitlist-h2 { font-size: 30px; }
+}
+
 </style>
 </head>
 <body>
@@ -370,174 +530,112 @@ h3.h3{font-family:var(--serif);font-size:clamp(22px,3vw,38px);line-height:1.08}
 </div>
 
 <section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="ph-label">Apply</div>
-    <h1>Ready to get started? Apply for a place.</h1>
-    <p>Complete this form to apply for a place in the next Sound Haven intake. We review all applications and contact you within 48 hours to arrange a free consultation call before confirming your place.</p>
+  <div class="ph-inner">
+    <div class="ph-label">Enrolment</div>
+    <h1>Ready to find<br/>your sound?</h1>
+    <p>Our programs are in development and will be opening for enrolment soon. Get your name on the waiting list and we'll be in touch the moment places become available.</p>
   </div>
 </section>
 
-<section class="section section--white">
-  <div class="enrol-layout">
-    <div class="enrol-sidebar reveal-l">
-      <div class="sc-lime">
-        <h4>How Intakes Work</h4>
-        <p>Sound Haven runs structured intake rounds — programs begin on fixed dates throughout the year. When you apply, we'll confirm whether the upcoming intake has places available, or offer you a spot in the next one.</p>
-        <p>Once you apply, you'll be contacted within 48 hours. You'll need to confirm your place and submit required documentation within the timeframe we provide — places don't hold indefinitely.</p>
-      </div>
-      <div class="sc">
-        <h4>What to Have Ready</h4>
-        <p>Your NDIS participant number, support coordinator contact details, and a letter of support from your coordinator. Full document requirements are explained below.</p>
-        <a href="contact.html">Questions first? Talk to us →</a>
-      </div>
-      <div class="sc">
-        <h4>What Happens After You Apply</h4>
-        <div class="steps-list">
-          <div class="step-item"><div class="step-circ">01</div><div class="step-text"><h5>We review your application</h5><p>Within 48 hours of submission.</p></div></div>
-          <div class="step-item"><div class="step-circ">02</div><div class="step-text"><h5>Free consultation call</h5><p>We confirm fit and answer your questions.</p></div></div>
-          <div class="step-item"><div class="step-circ">03</div><div class="step-text"><h5>Documents confirmed</h5><p>NDIS funding and coordinator letter verified.</p></div></div>
-          <div class="step-item"><div class="step-circ">04</div><div class="step-text"><h5>Place confirmed + intake date</h5><p>You're in. We send your program details and start date.</p></div></div>
+<section class="enrol-section">
+  <div class="enrol-grid">
+
+    <!-- LEFT INFO COLUMN -->
+    <div class="enrol-info">
+      <div class="info-label">What's Coming</div>
+      <h2 class="info-h2">Two programs.<br/>Launching soon.</h2>
+
+      <div class="prog-cards">
+        <div class="prog-info-card">
+          <div class="prog-badge">Program 01</div>
+          <h3>DJ &amp; Mixing</h3>
+          <p>10-week in-person program. Controller basics, mixing, EQ, FX, and a live set performance in the final week. All equipment provided.</p>
+          <div class="prog-detail-row"><span>Duration</span><span>10 Weeks</span></div>
+          <div class="prog-detail-row"><span>Sessions</span><span>2 × 90 min per week</span></div>
+          <div class="prog-detail-row"><span>Format</span><span>In-person · Melbourne</span></div>
         </div>
+        <div class="prog-info-card">
+          <div class="prog-badge prog-badge--2">Program 02</div>
+          <h3>Music Production</h3>
+          <p>Two 10-week blocks. Beat making, sound design, melody, arrangement, and finding your sound. All software provided on-site.</p>
+          <div class="prog-detail-row"><span>Duration</span><span>10-Week Blocks</span></div>
+          <div class="prog-detail-row"><span>Sessions</span><span>2 × 90 min per week</span></div>
+          <div class="prog-detail-row"><span>Format</span><span>In-person · Melbourne</span></div>
+        </div>
+      </div>
+
+      <div class="ndis-note">
+        <div class="ndis-note-label">NDIS Funded</div>
+        <p>Both programs are funded under Capacity Building — Increased Social &amp; Community Participation and Improved Daily Living.</p>
+        <p>Open to NDIS participants with physical disability or neurodivergent conditions. All ages welcome.</p>
       </div>
     </div>
 
-    <div class="reveal-r">
-      <form id="enrolForm" action="https://formspree.io/f/xkoepyjb" method="POST">
-      <input type="hidden" name="_subject" value="New enrolment application — Sound Haven"/>
-      <input type="hidden" name="_replyto" value="soundhavenau@gmail.com"/>
+    <!-- RIGHT WAITING LIST COLUMN -->
+    <div class="enrol-form-col">
+      <div class="coming-badge">
+        <span class="coming-dot"></span>
+        Classes Coming Soon
+      </div>
+      <h2 class="waitlist-h2">Join the<br/>waiting list.</h2>
+      <p class="waitlist-sub">Be the first to know when enrolment opens. Fill in your details below and we'll contact you directly with intake dates, program information, and everything you need to apply.</p>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Participant Information</h3>
-          <div class="form-grid">
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">First Name<span class="req">*</span></label><input class="form-input" type="text" name="first_name" placeholder="First name" required/></div>
-              <div class="form-group"><label class="form-label">Last Name<span class="req">*</span></label><input class="form-input" type="text" name="last_name" placeholder="Last name" required/></div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Date of Birth<span class="req">*</span></label><input class="form-input" type="date" name="dob" required/></div>
-              <div class="form-group"><label class="form-label">Gender (optional)</label><select class="form-select"><option value="">Prefer not to say</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Other</option></select></div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Email<span class="req">*</span></label><input class="form-input" type="email" name="email" placeholder="email@address.com" required/></div>
-              <div class="form-group"><label class="form-label">Phone<span class="req">*</span></label><input class="form-input" type="tel" name="phone" placeholder="04xx xxx xxx" required/></div>
-            </div>
-            <div class="form-group"><label class="form-label">Residential Address<span class="req">*</span></label><input class="form-input" type="text" name="address" placeholder="Street, suburb, state, postcode" required/></div>
-          </div>
+      <form class="waitlist-form" action="https://formspree.io/f/xkoepyjb" method="POST">
+        <input type="hidden" name="_subject" value="Waiting List Enquiry — Sound Haven"/>
+        <input type="hidden" name="form_type" value="waiting_list"/>
+
+        <div class="wl-group">
+          <label class="wl-label">Your Name <span class="req">*</span></label>
+          <input class="wl-input" type="text" name="name" placeholder="First and last name" required/>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">NDIS Details</h3>
-          <div class="form-grid">
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">NDIS Participant Number<span class="req">*</span></label><input class="form-input" type="text" name="ndis_number" placeholder="43XXXXXXXX" required/></div>
-              <div class="form-group"><label class="form-label">Plan Management Type<span class="req">*</span></label><select class="form-select" required><option value="">Select</option><option>NDIA Managed</option><option>Plan Managed</option><option>Self Managed</option></select></div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Plan Start Date<span class="req">*</span></label><input class="form-input" type="date" required/></div>
-              <div class="form-group"><label class="form-label">Plan End Date<span class="req">*</span></label><input class="form-input" type="date" required/></div>
-            </div>
-          </div>
+        <div class="wl-group">
+          <label class="wl-label">Email Address <span class="req">*</span></label>
+          <input class="wl-input" type="email" name="email" placeholder="your@email.com" required/>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Support Coordinator</h3>
-          <p class="form-sec-sub">We need your support coordinator's details and a signed letter of support confirming you are fit and able to attend the program. See document section below.</p>
-          <div class="form-grid">
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Coordinator Full Name<span class="req">*</span></label><input class="form-input" type="text" name="coordinator_name" placeholder="Full name" required/></div>
-              <div class="form-group"><label class="form-label">Organisation / Agency</label><input class="form-input" type="text" name="coordinator_organisation" placeholder="Organisation name"/></div>
-            </div>
-            <div class="form-row-2">
-              <div class="form-group"><label class="form-label">Coordinator Email<span class="req">*</span></label><input class="form-input" type="email" name="coordinator_email" placeholder="coordinator@agency.com.au" required/></div>
-              <div class="form-group"><label class="form-label">Coordinator Phone<span class="req">*</span></label><input class="form-input" type="tel" name="coordinator_phone" placeholder="Phone number" required/></div>
-            </div>
-          </div>
+        <div class="wl-group">
+          <label class="wl-label">Phone (optional)</label>
+          <input class="wl-input" type="tel" name="phone" placeholder="04xx xxx xxx"/>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Disability &amp; Access Requirements</h3>
-          <p class="form-sec-sub">This information helps us prepare the right environment and support. All information is strictly confidential and used solely for program delivery.</p>
-          <div class="form-grid">
-            <div class="form-group"><label class="form-label">Primary Disability / Diagnosis<span class="req">*</span></label><input class="form-input" type="text" name="primary_disability" placeholder="e.g. Cerebral Palsy, ADHD, ASD, Spinal Cord Injury, ABI, Psychosocial disability" required/></div>
-            <div class="form-group"><label class="form-label">Secondary Conditions (if any)</label><input class="form-input" type="text" name="secondary_conditions" placeholder="Any additional diagnoses or conditions"/></div>
-            <div class="form-group">
-              <label class="form-label">Physical &amp; Mobility Access Needs</label>
-              <div class="cb-grid">
-                <label class="form-cb-label"><input type="checkbox"/> Wheelchair user</label>
-                <label class="form-cb-label"><input type="checkbox"/> Walking frame / mobility aid</label>
-                <label class="form-cb-label"><input type="checkbox"/> Limited upper limb mobility</label>
-                <label class="form-cb-label"><input type="checkbox"/> Accessible parking required</label>
-                <label class="form-cb-label"><input type="checkbox"/> Accessible bathroom required</label>
-                <label class="form-cb-label"><input type="checkbox"/> No specific physical access needs</label>
-              </div>
-            </div>
-            <div class="form-group"><label class="form-label">Sensory or Communication Needs</label><textarea class="form-textarea" name="sensory_needs" style="min-height:80px" placeholder="e.g. hearing aids, visual impairment, preferred communication style, noise sensitivity, AAC device..."></textarea></div>
-            <div class="form-group"><label class="form-label">Behavioural or Environmental Considerations</label><textarea class="form-textarea" name="behavioural_notes" style="min-height:80px" placeholder="e.g. lighting preferences, preferred session structure, things that help you focus, things to be aware of..."></textarea></div>
-            <div class="form-group"><label class="form-label">Any Other Requirements</label><textarea class="form-textarea" name="other_requirements" placeholder="Anything else that will help us prepare the best experience for you..."></textarea></div>
-            <div class="form-group"><label class="form-label">Will a Support Worker Attend?<span class="req">*</span></label>
-              <select class="form-select" name="support_worker" required>
-                <option value="">Select</option>
-                <option>Yes — support worker will attend all sessions</option>
-                <option>Yes — support worker will attend some sessions</option>
-                <option>No — attending independently</option>
-                <option>Unsure — to be confirmed</option>
-              </select>
-            </div>
-          </div>
+        <div class="wl-group">
+          <label class="wl-label">I am a...</label>
+          <select class="wl-input" name="role">
+            <option value="">Select</option>
+            <option>NDIS Participant</option>
+            <option>Support Coordinator</option>
+            <option>Parent / Carer</option>
+            <option>Plan Manager</option>
+            <option>Other</option>
+          </select>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Program Selection</h3>
-          <p style="font-size:14px;color:var(--forest);background:rgba(28,56,41,.06);padding:12px 16px;border-radius:8px;margin-bottom:16px"><strong>Eligibility:</strong> Sound Haven programs are open to NDIS participants with a physical disability or a neurodivergent condition (e.g. ASD, ADHD, ABI, psychosocial disability). All ages welcome.</p><div class="intake-notice">
-            <p><strong>How intake works:</strong> Sound Haven runs fixed intake rounds throughout the year. After submitting this application, we'll confirm availability for the upcoming intake and contact you with your options. You'll need to respond and complete documentation within the timeframe provided to secure your place.</p>
-          </div>
-          <div class="form-grid">
-            <div class="form-group"><label class="form-label">Program<span class="req">*</span></label>
-              <select class="form-select" name="program_choice" required>
-                <option value="">Select a program</option>
-                <option>DJ &amp; Mixing (10 weeks)</option>
-                <option>Music Production — Block 1 (10 weeks)</option>
-                <option>Unsure — I'd like to discuss options</option>
-              </select>
-            </div>
-
-            <div class="form-group"><label class="form-label">Anything else we should know?</label>
-              <textarea class="form-textarea" name="message" placeholder="Goals, interests, questions, context — anything that helps us prepare for you..."></textarea>
-            </div>
-          </div>
+        <div class="wl-group">
+          <label class="wl-label">Interested In</label>
+          <select class="wl-input" name="program_interest">
+            <option value="">Select a program</option>
+            <option>DJ &amp; Mixing</option>
+            <option>Music Production</option>
+            <option>Both</option>
+            <option>Not sure yet</option>
+          </select>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Required Documents</h3>
-          <p class="form-sec-sub">The following documents are required before a place can be confirmed. Upload here or email to soundhavenau@gmail.com after submitting your application.</p>
-          <div class="doc-item"><div class="doc-icon">📋</div><div><h5>Support Coordinator Letter of Support<span class="req-badge">REQUIRED</span></h5><p>A signed letter from your NDIS support coordinator confirming you are fit and able to attend Sound Haven programs. The letter should include the coordinator's name, organisation, contact details, your NDIS participant number, and confirmation of relevant Capacity Building funding.</p></div></div>
-          <div class="doc-item"><div class="doc-icon">📄</div><div><h5>NDIS Plan Funding Page<span class="req-badge">REQUIRED</span></h5><p>A copy of the relevant section of your NDIS plan showing Capacity Building funding under Social &amp; Community Participation or Improved Daily Living, with sufficient funds for the program.</p></div></div>
-          <div class="doc-item" style="background:var(--warm);border-color:var(--rule)"><div class="doc-icon" style="background:var(--sand)">💉</div><div><h5>Medical Clearance (if applicable)</h5><p>If you have complex medical needs, a brief note from a GP or specialist may be requested. We'll advise you during the consultation call.</p></div></div>
-          <div class="upload-zone" style="margin-top:20px" onclick="document.getElementById('fu').click()">
-            <div style="font-size:28px">📎</div>
-            <p><strong>Click to upload documents</strong> — or drag and drop</p>
-            <p style="font-size:12px;margin-top:4px">PDF, JPG, PNG · Max 10MB per file</p>
-            <input id="fu" type="file" multiple accept=".pdf,.jpg,.jpeg,.png" style="display:none"/>
-          </div>
-          <p class="form-hint" style="margin-top:10px">Can't upload now? Email to <strong>soundhavenau@gmail.com</strong> with your name and NDIS number in the subject line.</p>
+        <div class="wl-group">
+          <label class="wl-label">Anything you'd like to tell us?</label>
+          <textarea class="wl-input wl-textarea" name="message" placeholder="Goals, questions, participant background — anything helpful..."></textarea>
         </div>
 
-        <div class="form-sec">
-          <h3 class="form-sec-title">Consent &amp; Declaration</h3>
-          <div class="consent-box">
-            <p class="consent-txt">By submitting this application you confirm the information provided is accurate, you consent to Sound Haven storing and using this information for program enrolment and delivery, and you understand that a place is not confirmed until documentation is verified and a consultation call is completed. You acknowledge that Sound Haven's programs are creative capacity building programs — not a substitute for medical, therapeutic, or clinical services.</p>
-            <label class="consent-check"><input type="checkbox" required/><span>I confirm the above and agree to Sound Haven's <a href="legal.html" style="color:var(--forest);text-decoration:underline">Privacy Policy and Terms of Use</a>.</span></label>
-            <label class="consent-check"><input type="checkbox"/><span>I give permission for Sound Haven to contact my support coordinator directly regarding this application.</span></label>
-          </div>
+        <button type="submit" class="wl-btn">Join the Waiting List →</button>
+        <div class="wl-success" id="wlSuccess">
+          ✓ You're on the list. We'll be in touch as soon as enrolment opens.
         </div>
-
-        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <button id="enrolBtn" type="submit" class="btn btn-forest btn-lg">Submit Application →</button>
-          <p style="font-size:13px;color:var(--stone)">We'll be in touch within 48 hours.</p>
-        </div>
-        <div class="form-success" id="enrolSuccess">✓ Application received. We'll review it and contact you within 48 hours to discuss availability for the next intake and arrange your free consultation call. If you haven't uploaded documents yet, email them to soundhavenau@gmail.com with your name and NDIS number in the subject line.</div>
       </form>
+
+      <p class="wl-privacy">Your details are kept private and only used to contact you about Sound Haven programs. <a href="legal.html">Privacy Policy</a>.</p>
     </div>
+
   </div>
 </section>
 
@@ -604,6 +702,21 @@ function send(sid,bid){
   s.style.display='block';
   s.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
+
+// Waitlist form
+const wlForm = document.querySelector('.waitlist-form');
+if(wlForm) {
+  wlForm.addEventListener('submit', function(e) {
+    // Let form submit naturally to Formspree, but also show success
+    const btn = this.querySelector('.wl-btn');
+    const success = document.getElementById('wlSuccess');
+    setTimeout(() => {
+      if(btn) { btn.disabled = true; btn.textContent = 'Submitted ✓'; }
+      if(success) success.style.display = 'block';
+    }, 800);
+  });
+}
+
 </script>
 </body>
 </html>
