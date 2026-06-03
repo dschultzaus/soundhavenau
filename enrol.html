@@ -916,12 +916,73 @@ strong { color: #F5F0E8; }
 .form-hint { color: rgba(245,240,232,.35) !important; }
 select option { background: #0E0D0B; color: #F5F0E8; }
 
-/* ═══ CONTRAST FIXES — ENROL & CONTACT ══════════════════ */
 
-/* ── ENROL: Programme info cards ── */
+/* ═══ ENROL + CONTACT DARK MODE FIXES ═══════════════════ */
+
+/* Force the enrol section itself to dark — it has its own bg rule */
+.enrol-section {
+  background: #0A0908 !important;
+}
+
+/* Nav solid state override — was reverting to cream */
+.nav.solid {
+  background: rgba(10,9,8,.95) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 1px 0 rgba(245,240,232,.07) !important;
+}
+.nav.solid .nav-links a { color: rgba(245,240,232,.44) !important; }
+.nav.solid .nav-logo { color: #F5F0E8 !important; }
+.nav.solid .hamburger span { background: #F5F0E8 !important; }
+
+/* All text on the enrol page — readable */
+.enrol-info .info-h2 {
+  color: #F5F0E8 !important;
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(22px,2.8vw,36px) !important;
+  letter-spacing: -.8px !important;
+  line-height: 1.06 !important;
+}
+.enrol-info .info-label {
+  color: var(--lime) !important;
+  font-size: 9px !important;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 16px;
+}
+.enrol-info .info-label::before {
+  content: '';
+  width: 16px; height: 1.5px;
+  background: var(--lime) !important;
+  display: inline-block;
+}
+
+/* Programme cards */
 .prog-info-card {
   background: #141210 !important;
   border: 1.5px solid rgba(245,240,232,.13) !important;
+  border-radius: 14px !important;
+  padding: 22px 24px !important;
+  transition: border-color .2s;
+}
+.prog-info-card:hover { border-color: rgba(200,245,60,.3) !important; }
+.prog-badge {
+  background: var(--forest) !important;
+  color: var(--lime) !important;
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 100px;
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.prog-badge--2 {
+  background: rgba(245,240,232,.09) !important;
+  color: rgba(245,240,232,.7) !important;
 }
 .prog-info-card h3 {
   color: #F5F0E8 !important;
@@ -929,52 +990,41 @@ select option { background: #0E0D0B; color: #F5F0E8; }
   font-weight: 300 !important;
   font-size: 20px !important;
   margin-bottom: 10px;
+  line-height: 1.15;
 }
 .prog-info-card p {
   color: rgba(245,240,232,.68) !important;
   font-size: 13.5px !important;
   line-height: 1.72 !important;
+  margin-bottom: 14px;
 }
 .prog-detail-row {
-  border-top: 1px solid rgba(245,240,232,.1) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 0;
+  border-top: 1px solid rgba(245,240,232,.1) !important;
+  font-size: 12.5px;
 }
 .prog-detail-row span:first-child {
   color: rgba(245,240,232,.5) !important;
-  font-size: 11px !important;
   font-weight: 700;
+  font-size: 11px !important;
   letter-spacing: .5px;
   text-transform: uppercase;
 }
 .prog-detail-row span:last-child {
   color: #F5F0E8 !important;
-  font-size: 13px !important;
   font-weight: 500;
+  font-size: 13px !important;
 }
 
-/* ── ENROL: Who it's for / info section ── */
-.info-h2 {
-  color: #F5F0E8 !important;
-  font-family: 'Cormorant Garamond',Georgia,serif !important;
-  font-weight: 300 !important;
-  font-size: clamp(22px,2.8vw,36px) !important;
-  letter-spacing: -.8px !important;
-}
-.info-label {
-  color: var(--lime) !important;
-  font-size: 10px !important;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-}
-.info-label::before { background: var(--lime) !important; }
-
-/* ── ENROL: NDIS note box ── */
+/* NDIS note */
 .ndis-note {
   background: rgba(28,56,41,.35) !important;
   border-left: 3px solid var(--lime) !important;
-  border-radius: 0 12px 12px 0;
-  padding: 20px 22px;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 20px 22px !important;
 }
 .ndis-note-label {
   color: var(--lime) !important;
@@ -991,9 +1041,29 @@ select option { background: #0E0D0B; color: #F5F0E8; }
   line-height: 1.7 !important;
   margin-bottom: 8px;
 }
-.ndis-note p:last-child { margin-bottom: 0; }
+.ndis-note p:last-child { margin-bottom: 0 !important; }
 
-/* ── ENROL: Waiting list heading + sub ── */
+/* Waiting list right column */
+.coming-badge {
+  background: var(--forest) !important;
+  color: var(--lime) !important;
+  border-radius: 100px !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 7px 16px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px !important;
+}
+.coming-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lime) !important;
+  animation: pulse 1.8s ease-in-out infinite;
+}
 .waitlist-h2 {
   color: #F5F0E8 !important;
   font-family: 'Cormorant Garamond',Georgia,serif !important;
@@ -1001,109 +1071,90 @@ select option { background: #0E0D0B; color: #F5F0E8; }
   font-size: clamp(26px,3.2vw,40px) !important;
   letter-spacing: -1px !important;
   line-height: 1.05 !important;
-  margin-bottom: 14px;
+  margin-bottom: 14px !important;
 }
 .waitlist-sub {
   color: rgba(245,240,232,.65) !important;
   font-size: 15px !important;
   font-weight: 300 !important;
   line-height: 1.78 !important;
-  margin-bottom: 28px;
+  margin-bottom: 28px !important;
 }
 
-/* ── ENROL: Coming soon badge ── */
-.coming-badge {
-  background: var(--forest) !important;
-  color: var(--lime) !important;
-  font-size: 11px !important;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 7px 16px;
-  border-radius: 100px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-.coming-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--lime) !important;
-}
-
-/* ── ENROL: Form labels ── */
+/* Form labels */
 .wl-label {
-  color: rgba(245,240,232,.65) !important;
+  color: rgba(245,240,232,.62) !important;
   font-size: 10.5px !important;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
   display: block;
+  margin-bottom: 6px;
 }
+.req { color: var(--lime) !important; }
 
-/* ── ENROL: Form inputs ── */
+/* Form inputs */
 .wl-input {
   background: #1A1815 !important;
   border: 1.5px solid rgba(245,240,232,.18) !important;
   color: #F5F0E8 !important;
-  font-family: var(--sans);
   font-size: 15px !important;
-  border-radius: 10px;
-  padding: 12px 15px;
+  border-radius: 10px !important;
+  padding: 12px 15px !important;
   width: 100%;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: var(--sans);
+  transition: border-color .18s, box-shadow .18s;
 }
 .wl-input:focus {
   border-color: var(--lime) !important;
   box-shadow: 0 0 0 3px rgba(200,245,60,.1) !important;
 }
-.wl-input::placeholder {
-  color: rgba(245,240,232,.28) !important;
-}
+.wl-input::placeholder { color: rgba(245,240,232,.25) !important; }
 .wl-textarea {
-  min-height: 100px;
-  resize: vertical;
-  line-height: 1.6;
+  min-height: 100px !important;
+  resize: vertical !important;
+  line-height: 1.6 !important;
 }
 
-/* ── ENROL: Privacy line ── */
+/* Submit button */
+.wl-btn {
+  background: var(--forest) !important;
+  color: var(--lime) !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 15px 32px !important;
+  cursor: pointer;
+  border: none;
+  font-family: var(--sans);
+  transition: background .18s, transform .15s;
+  align-self: flex-start;
+}
+.wl-btn:hover {
+  background: var(--lime) !important;
+  color: #0A0908 !important;
+  transform: translateY(-2px);
+}
+
+/* Privacy */
 .wl-privacy {
-  color: rgba(245,240,232,.42) !important;
+  color: rgba(245,240,232,.38) !important;
   font-size: 12px !important;
   line-height: 1.55;
   margin-top: 14px;
 }
 .wl-privacy a { color: var(--lime) !important; text-decoration: underline; }
 
-/* ── ENROL: Required asterisk ── */
-.req { color: var(--lime) !important; margin-left: 2px; }
-
-/* ── CONTACT: Contact info items ── */
-.ct-layout h2.h2 { color: #F5F0E8 !important; }
-.ct-layout .s-label { color: var(--lime) !important; }
+/* ── CONTACT page ── */
 .ci-icon {
   background: rgba(245,240,232,.09) !important;
-  border-radius: 10px;
-  width: 42px; height: 42px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 17px;
-  flex-shrink: 0;
+  border-radius: 10px !important;
 }
-.ci h5 {
-  color: #F5F0E8 !important;
-  font-size: 13px !important;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.ci p {
-  color: rgba(245,240,232,.58) !important;
-  font-size: 13px !important;
-  line-height: 1.55;
-}
-
-/* ── CONTACT: Who-for chips ── */
+.ci h5 { color: #F5F0E8 !important; font-size: 13px !important; font-weight: 600; }
+.ci p   { color: rgba(245,240,232,.58) !important; font-size: 13px !important; }
 .who-chip {
   background: rgba(245,240,232,.07) !important;
   color: rgba(245,240,232,.62) !important;
@@ -1111,94 +1162,41 @@ select option { background: #0E0D0B; color: #F5F0E8; }
   border-radius: 100px;
   padding: 6px 13px;
   font-size: 12px;
-  font-weight: 600;
 }
-
-/* ── CONTACT: Next steps cards ── */
 .ns {
   background: #141210 !important;
   border: 1px solid rgba(245,240,232,.1) !important;
   border-radius: 12px;
-  padding: 26px;
 }
 .ns-num {
   font-family: 'Cormorant Garamond',Georgia,serif !important;
-  font-size: 38px !important;
   font-weight: 300 !important;
   color: rgba(245,240,232,.08) !important;
-  line-height: 1;
-  margin-bottom: 10px;
+  font-size: 38px !important;
 }
 .ns h4 {
+  color: #F5F0E8 !important;
   font-family: 'Cormorant Garamond',Georgia,serif !important;
   font-weight: 300 !important;
   font-size: 16px !important;
-  color: #F5F0E8 !important;
-  margin-bottom: 7px;
 }
-.ns p {
-  color: rgba(245,240,232,.58) !important;
-  font-size: 13px !important;
-  line-height: 1.65;
-}
+.ns p { color: rgba(245,240,232,.58) !important; font-size: 13px !important; }
 
-/* ── CONTACT: Form heading ── */
-.ct-layout h3 {
-  font-family: 'Cormorant Garamond',Georgia,serif !important;
-  font-weight: 300 !important;
-  color: #F5F0E8 !important;
-  font-size: 22px !important;
-  letter-spacing: -.3px;
-  margin-bottom: 22px;
-}
-
-/* ── BOTH: Form fields ── */
-.form-label {
-  color: rgba(245,240,232,.62) !important;
-  font-size: 10.5px !important;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-}
-.form-input,
-.form-select,
-.form-textarea {
+/* Contact + enrol form inputs */
+.form-label { color: rgba(245,240,232,.62) !important; font-size: 10.5px !important; font-weight: 700 !important; letter-spacing: 1.8px !important; text-transform: uppercase !important; }
+.form-input, .form-select, .form-textarea {
   background: #1A1815 !important;
   border: 1.5px solid rgba(245,240,232,.18) !important;
   color: #F5F0E8 !important;
   font-size: 15px !important;
 }
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
+.form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--lime) !important;
   box-shadow: 0 0 0 3px rgba(200,245,60,.1) !important;
 }
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: rgba(245,240,232,.25) !important;
-}
-.form-hint {
-  color: rgba(245,240,232,.42) !important;
-  font-size: 12px !important;
-  line-height: 1.55;
-}
-.form-success {
-  background: rgba(200,245,60,.09) !important;
-  border: 1.5px solid rgba(200,245,60,.22) !important;
-  color: var(--lime) !important;
-  border-radius: 10px;
-  padding: 16px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-/* ── Select option text (system) ── */
-select option {
-  background: #1A1815 !important;
-  color: #F5F0E8 !important;
-}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(245,240,232,.25) !important; }
+.form-hint { color: rgba(245,240,232,.42) !important; font-size: 12px !important; }
+select option { background: #1A1815; color: #F5F0E8; }
 
 </style>
 </head>
