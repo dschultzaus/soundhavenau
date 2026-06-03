@@ -733,6 +733,290 @@ strong { color: #F5F0E8; }
 .form-hint { color: rgba(245,240,232,.35) !important; }
 select option { background: #0E0D0B; color: #F5F0E8; }
 
+/* ═══ CONTRAST FIXES — ENROL & CONTACT ══════════════════ */
+
+/* ── ENROL: Programme info cards ── */
+.prog-info-card {
+  background: #141210 !important;
+  border: 1.5px solid rgba(245,240,232,.13) !important;
+}
+.prog-info-card h3 {
+  color: #F5F0E8 !important;
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  font-size: 20px !important;
+  margin-bottom: 10px;
+}
+.prog-info-card p {
+  color: rgba(245,240,232,.68) !important;
+  font-size: 13.5px !important;
+  line-height: 1.72 !important;
+}
+.prog-detail-row {
+  border-top: 1px solid rgba(245,240,232,.1) !important;
+  padding: 8px 0;
+}
+.prog-detail-row span:first-child {
+  color: rgba(245,240,232,.5) !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.prog-detail-row span:last-child {
+  color: #F5F0E8 !important;
+  font-size: 13px !important;
+  font-weight: 500;
+}
+
+/* ── ENROL: Who it's for / info section ── */
+.info-h2 {
+  color: #F5F0E8 !important;
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(22px,2.8vw,36px) !important;
+  letter-spacing: -.8px !important;
+}
+.info-label {
+  color: var(--lime) !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.info-label::before { background: var(--lime) !important; }
+
+/* ── ENROL: NDIS note box ── */
+.ndis-note {
+  background: rgba(28,56,41,.35) !important;
+  border-left: 3px solid var(--lime) !important;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 22px;
+}
+.ndis-note-label {
+  color: var(--lime) !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.ndis-note p {
+  color: rgba(245,240,232,.72) !important;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 8px;
+}
+.ndis-note p:last-child { margin-bottom: 0; }
+
+/* ── ENROL: Waiting list heading + sub ── */
+.waitlist-h2 {
+  color: #F5F0E8 !important;
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  font-size: clamp(26px,3.2vw,40px) !important;
+  letter-spacing: -1px !important;
+  line-height: 1.05 !important;
+  margin-bottom: 14px;
+}
+.waitlist-sub {
+  color: rgba(245,240,232,.65) !important;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  line-height: 1.78 !important;
+  margin-bottom: 28px;
+}
+
+/* ── ENROL: Coming soon badge ── */
+.coming-badge {
+  background: var(--forest) !important;
+  color: var(--lime) !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.coming-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lime) !important;
+}
+
+/* ── ENROL: Form labels ── */
+.wl-label {
+  color: rgba(245,240,232,.65) !important;
+  font-size: 10.5px !important;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── ENROL: Form inputs ── */
+.wl-input {
+  background: #1A1815 !important;
+  border: 1.5px solid rgba(245,240,232,.18) !important;
+  color: #F5F0E8 !important;
+  font-family: var(--sans);
+  font-size: 15px !important;
+  border-radius: 10px;
+  padding: 12px 15px;
+  width: 100%;
+  outline: none;
+}
+.wl-input:focus {
+  border-color: var(--lime) !important;
+  box-shadow: 0 0 0 3px rgba(200,245,60,.1) !important;
+}
+.wl-input::placeholder {
+  color: rgba(245,240,232,.28) !important;
+}
+.wl-textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* ── ENROL: Privacy line ── */
+.wl-privacy {
+  color: rgba(245,240,232,.42) !important;
+  font-size: 12px !important;
+  line-height: 1.55;
+  margin-top: 14px;
+}
+.wl-privacy a { color: var(--lime) !important; text-decoration: underline; }
+
+/* ── ENROL: Required asterisk ── */
+.req { color: var(--lime) !important; margin-left: 2px; }
+
+/* ── CONTACT: Contact info items ── */
+.ct-layout h2.h2 { color: #F5F0E8 !important; }
+.ct-layout .s-label { color: var(--lime) !important; }
+.ci-icon {
+  background: rgba(245,240,232,.09) !important;
+  border-radius: 10px;
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+.ci h5 {
+  color: #F5F0E8 !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.ci p {
+  color: rgba(245,240,232,.58) !important;
+  font-size: 13px !important;
+  line-height: 1.55;
+}
+
+/* ── CONTACT: Who-for chips ── */
+.who-chip {
+  background: rgba(245,240,232,.07) !important;
+  color: rgba(245,240,232,.62) !important;
+  border: 1px solid rgba(245,240,232,.11) !important;
+  border-radius: 100px;
+  padding: 6px 13px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── CONTACT: Next steps cards ── */
+.ns {
+  background: #141210 !important;
+  border: 1px solid rgba(245,240,232,.1) !important;
+  border-radius: 12px;
+  padding: 26px;
+}
+.ns-num {
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-size: 38px !important;
+  font-weight: 300 !important;
+  color: rgba(245,240,232,.08) !important;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.ns h4 {
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  font-size: 16px !important;
+  color: #F5F0E8 !important;
+  margin-bottom: 7px;
+}
+.ns p {
+  color: rgba(245,240,232,.58) !important;
+  font-size: 13px !important;
+  line-height: 1.65;
+}
+
+/* ── CONTACT: Form heading ── */
+.ct-layout h3 {
+  font-family: 'Cormorant Garamond',Georgia,serif !important;
+  font-weight: 300 !important;
+  color: #F5F0E8 !important;
+  font-size: 22px !important;
+  letter-spacing: -.3px;
+  margin-bottom: 22px;
+}
+
+/* ── BOTH: Form fields ── */
+.form-label {
+  color: rgba(245,240,232,.62) !important;
+  font-size: 10.5px !important;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  background: #1A1815 !important;
+  border: 1.5px solid rgba(245,240,232,.18) !important;
+  color: #F5F0E8 !important;
+  font-size: 15px !important;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--lime) !important;
+  box-shadow: 0 0 0 3px rgba(200,245,60,.1) !important;
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(245,240,232,.25) !important;
+}
+.form-hint {
+  color: rgba(245,240,232,.42) !important;
+  font-size: 12px !important;
+  line-height: 1.55;
+}
+.form-success {
+  background: rgba(200,245,60,.09) !important;
+  border: 1.5px solid rgba(200,245,60,.22) !important;
+  color: var(--lime) !important;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── Select option text (system) ── */
+select option {
+  background: #1A1815 !important;
+  color: #F5F0E8 !important;
+}
+
 </style>
 </head>
 <body>
